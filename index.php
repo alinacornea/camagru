@@ -1,11 +1,8 @@
 <?php
   include('shared/header.php');
 ?>
-<!doctype html>
 
-<html lang="en">
-
-<link rel="stylesheet" href="front/style/index.css">
+<!-- <link rel="stylesheet" href="front/style/index.css">
 <head>
   <meta charset="utf-8">
   <title>Vintage - store </title>
@@ -14,14 +11,12 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 </head>
 
-<body>
+<body> -->
 
   <div class="dropdown">
-
+      here
   </div>
 
-</body>
-</html>
 
 <?php
   include('shared/footer.php');

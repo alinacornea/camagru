@@ -6,19 +6,15 @@
 <head>
   <meta charset="utf-8">
   <title>Camagru</title>
-  <link rel="icon" href="#"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Acme">
-  <link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="../front/style/header.css">
+  <link rel="icon" href="http://localhost:8080/camagru/front/images/icon_star.png"/>
+  <link rel="stylesheet" href="http://localhost:8080/camagru/front/style/header.css">
 </head>
 
 <body>
     <header>
       <h1>
-        <a title="Home"href="#"> <img id="home" src="" alt="Home"></a>
+        <a title="Home"href="http://localhost:8080/camagru/index.php"> <img id="home" src="http://localhost:8080/camagru/front/images/home.png" alt="Home"></a>
         <svg >
-
-    <!-- Gradient -->
         <radialGradient id="gr-radial"
                     cx="100%" cy="100%" r="100%">
       <animate attributeName="r"
@@ -31,19 +27,18 @@
       </stop>
       <stop stop-color="rgba(250, 180, 150, 2)" offset="100%"/>
     </radialGradient>
-
-    <!-- Text -->
     <text text-anchor="middle"
           x="50%"
           y="50%"
-          dy=".20em"
+          dy=".10em"
           class="text"
           >
-      Camagru
+      Camagru -
     </text>
   </svg>
-        <a title="Admin" target="_blank" href="#"><img id="admin" src="" alt="Admin"></a>
-        <a title="Logout" href="#"><img id="logout" src="" alt="Logout"></a>
-        <a title="Login" href="#"> <img id="login"src="" alt="Login"></a>
+        <a title="Admin" href="http://localhost:8080/camagru/admin/user/admin.php"><img id="admin" src="http://localhost:8080/camagru/front/images/admin.png" alt="Admin"></a>
+        <a title="Logout" href="http://localhost:8080/camagru/admin/user/logout.php"><img id="logout" src="http://localhost:8080/camagru/front/images/out.png" alt="Logout"></a>
+        <a title="Login" href="http://localhost:8080/camagru/admin/user/login.php"> <img id="login"src="http://localhost:8080/camagru/front/images/log.png" alt="Login"></a>
+        <div id="create"> create your own world</div>
       </h1>
     </header>
