@@ -1,7 +1,6 @@
 <?php  session_start(); ?>
 
 <?php
-// require_once('../../initialize.php');
   include('../../shared/header.php');
 ?>
 
@@ -29,11 +28,12 @@
       <input type="text" placeholder="Enter Login" name="login" value= "" required />
 
       <label><b>Password</b></label>
-      <input type="password" placeholder="Enter Password     Note: your password must include at least 1 digit and 1 capital letter" name="passwd" value="" required/>
+      <input type="password" placeholder="Enter Password     Note: your password must include at least 3 digits and 3 letters" name="passwd" value="" required/>
 
       <label><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repeat Password" name="pssswd" value="" required/>
-      <input type="checkbox" checked="checked"> By creating an account you agree to our <a href="privacy_terms.php">Terms & Privacy</a>.
+      <input type="password" placeholder="Repeat Password" name="repeat" value="" required/>
+
+      <input type="checkbox" checked="checked" required /> <label>By creating an account you agree to our  </label> <a href="terms_privacy.php"> Terms & Privacy</a>.
       <input type="submit" class="signupbtn"  name="submit" value="Create an account"/>
     </div>
   </form>
