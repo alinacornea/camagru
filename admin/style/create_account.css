@@ -24,7 +24,7 @@ h3{
 #board{
    border:2px solid #c2a661;
    opacity: 0.9;
-   width:850px;
+   width:70%;
    border-radius: 7px;
 }
 
@@ -39,6 +39,7 @@ input[type=text], input[type=password]{
 label{
   color:#9A1111;
   margin-left:10px;
+  float:left;
 }
 
 .signupbtn{

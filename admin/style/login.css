@@ -89,7 +89,13 @@ input[name="create"]{
   box-shadow: inset 0px 1px 0px #BD871A, 0px 5px 0px 0px #800000, 0px 10px 5px #999;
 
 }
+
 input[name="create"]:hover{
+  color:#c2a661;
+  text-shadow:none;
+}
+
+input[name="reset"]:hover{
   color:#c2a661;
   text-shadow:none;
 }
@@ -104,16 +110,16 @@ input[name="submit"]:hover{
   font-size:18px;
 }
 
-.forgot{
-}
-
-
 input[name="enter"] {
-  font-size:13px;
-  height:35px;
   width:25%;
-  display:block;
+  height:35px;
   font-family: "Whitney SSm A", "Whitney SSm B", "Avenir", "Segoe UI", "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size:16px;
+  text-align:center;
+  text-shadow:1px 1px 0px #B22222;
+  padding-top:6px;
+  position:relative;
+  background-color: #FFEBCD;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -129,9 +135,10 @@ input[name="reset"]{
   font-size:14px;
   font-weight:bold;
   color:#fff;
-  width:40%;
+  width:30%;
   text-decoration:none;
   cursor:pointer;
+  text-transform:uppercase;
   text-align:center;
   text-shadow:1px 1px 0px #000000;
   padding-top:3px;
@@ -152,4 +159,22 @@ h4 {
   font-size: 1em;
   line-height: 1.5em;
   font-family: "Whitney SSm A", "Whitney SSm B", "Avenir", "Segoe UI", "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+input[name="new"], input[name="confirm"]
+{
+  width:20%;
+  height:35px;
+  font-family: "Whitney SSm A", "Whitney SSm B", "Avenir", "Segoe UI", "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size:16px;
+  text-align:center;
+  text-shadow:1px 1px 0px #B22222;
+  padding-top:6px;
+  position:relative;
+  background-color: #FFEBCD;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius:5px;
+  margin-bottom:15px;
 }
