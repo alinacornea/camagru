@@ -27,7 +27,7 @@ class userClass
       }
     }
     catch(PDOException $e) {
-        echo '{"error":{"text":'. $e->getMessage() .'}}';
+        echo '{"error login":{"text":'. $e->getMessage() .'}}';
     }
   }
 
@@ -92,5 +92,39 @@ class userClass
   	return false;
   }
 
+  public function userEmail($email)
+  {
+    try{
+      $db = getDB();
+      $stmt = $db->prepare("SELECT * FROM Users WHERE login=:email or email=:email");
+      $stmt->bindParam("email", $email,PDO::PARAM_STR) ;
+      $stmt->bindParam("login", $email,PDO::PARAM_STR) ;
+      $stmt->execute();
+      $data = $stmt->fetch(PDO::FETCH_ASSOC);
+      return $data;
+    }
+
+    catch(PDOException $e) {
+        echo '{"error email":{"text":'. $e->getMessage() .'}}';
+    }
+  }
+
+  public function userReset($new, $user)
+  {
+    try{
+      $db = getDB();
+      $hash= hash('whirlpool', $new);
+      $sql = "UPDATE Users SET hash=:hash WHERE login=:user";
+      $stmt= $db->prepare($sql);
+      $stmt->bindParam(':user', $user,PDO::PARAM_STR);
+      $stmt->bindParam(':hash', $hash,PDO::PARAM_STR);
+      $stmt->execute();
+      return true;
+    }
+    catch(PDOException $e) {
+        echo '{"error pass":{"text":'. $e->getMessage() .'}}';
+        return false;
+    }
+  }
 }
 ?>

@@ -33,6 +33,7 @@ if ($_POST['submit'] === "Create an account")
 				"Content-type: text/html; charset=UTF-8 \r\n";
 
 				mail($To, $Subject, $Message, $Headers);
+				
 				echo "<script>alert('$login, please verify your email in order to finish you registration!')</script>";
 				echo "<script>window.open('../../index.php', '_self')</script>";
 			}

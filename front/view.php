@@ -1,5 +1,5 @@
 <?php
-  include('shared/header.php');
+  include('../shared/header.php');
 ?>
 
 <!-- <link rel="stylesheet" href="front/style/index.css">
@@ -14,9 +14,10 @@
 <body> -->
 
   <div class="dropdown">
+      here
   </div>
 
 
 <?php
-  include('shared/footer.php');
+  include('../shared/footer.php');
 ?>

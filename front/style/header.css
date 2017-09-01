@@ -25,10 +25,11 @@ h1 {
 
 #create{
   color:white;
-  font-size:25px;
+  font-size:29px;
   margin-top:-30px;
   font-family:cursive;
   font-style:italic;
+  color:#B8860B;
 
 }
 
@@ -47,6 +48,7 @@ h1 {
   width:60px;
   margin-right:-18px;
   height:60px;
+  cursor:not-allowed;
 }
 
 #logout{
@@ -63,4 +65,13 @@ h1 {
   padding: 20px;
   width:80px;
   height:60px;
+}
+
+#view{
+  float: right;
+  margin-right:-28px;
+  padding: 15px;
+  width:100px;
+  height:80px;
+
 }

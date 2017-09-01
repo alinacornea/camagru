@@ -1,0 +1,23 @@
+h2{
+  color:#FFE4E1;
+  text-align:center;
+}
+.main{
+  color:#FFF0F5;
+  font-family:proxima-nova, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size:13px;
+  background-color:black;
+  line-height: 1.538;
+  direction: ltr;
+  display: block;
+  list-style-type: decimal;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 40px;
+}
+#back{
+  color:#B22222;
+  font-size:14px;
+}

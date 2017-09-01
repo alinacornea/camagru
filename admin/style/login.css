@@ -35,11 +35,11 @@ input[type="password"]
 }
 
 
-input[type="submit"] {
+input[name="submit"]{
   width:240px;
   height:35px;
   display:block;
-  font-family:Arial, "Helvetica", sans-serif;
+  font-family: "Whitney SSm A", "Whitney SSm B", "Avenir", "Segoe UI", "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size:16px;
   font-weight:bold;
   color:#fff;
@@ -49,8 +49,8 @@ input[type="submit"] {
   text-shadow:1px 1px 0px #B22222;
   padding-top:6px;
   position:relative;
-  cursor:pointer;
   border: none;
+  cursor:pointer;
   background-color: #c2a661;
   background-image: linear-gradient(top,#3db0a6,#3111);
   border-top-left-radius: 5px;
@@ -61,24 +61,24 @@ input[type="submit"] {
 }
 
 .content a{
-  color:#FFFAFA;
+  color:#FFF0F5;
 }
-.content p{
+input[name="create"]{
   margin-right:40px;
   width:280px;
   height:45px;
   display:block;
-  font-family:Arial, "Helvetica", sans-serif;
+  font-family: "Whitney SSm A", "Whitney SSm B", "Avenir", "Segoe UI", "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size:16px;
   font-weight:bold;
   color:#fff;
   text-decoration:none;
   text-transform:uppercase;
+  cursor:pointer;
   text-align:center;
   text-shadow:1px 1px 0px #000000;
   padding-top:3px;
   position:relative;
-  cursor:pointer;
   border: none;
   background-color: #B22222;
   background-image: linear-gradient(top,#B22222,#3111);
@@ -89,12 +89,67 @@ input[type="submit"] {
   box-shadow: inset 0px 1px 0px #BD871A, 0px 5px 0px 0px #800000, 0px 10px 5px #999;
 
 }
-.content a:hover{
+input[name="create"]:hover{
   color:#c2a661;
   text-shadow:none;
 }
 
-input[type="submit"]:hover{
+input[name="submit"]:hover{
   color:#B22222;
   text-shadow:none;
+}
+
+.content a:hover{
+  color:#B22222;
+  font-size:18px;
+}
+
+.forgot{
+}
+
+
+input[name="enter"] {
+  font-size:13px;
+  height:35px;
+  width:25%;
+  display:block;
+  font-family: "Whitney SSm A", "Whitney SSm B", "Avenir", "Segoe UI", "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius:5px;
+  margin-bottom:10px;
+}
+
+input[name="reset"]{
+  margin-right:40px;
+  height:45px;
+  display:block;
+  font-family: "Whitney SSm A", "Whitney SSm B", "Avenir", "Segoe UI", "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size:14px;
+  font-weight:bold;
+  color:#fff;
+  width:40%;
+  text-decoration:none;
+  cursor:pointer;
+  text-align:center;
+  text-shadow:1px 1px 0px #000000;
+  padding-top:3px;
+  position:relative;
+  border: none;
+  background-color: #B22222;
+  background-image: linear-gradient(top,#B22222,#3111);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius:5px;
+  box-shadow: inset 0px 1px 0px #BD871A, 0px 5px 0px 0px #800000, 0px 10px 5px #999;
+}
+
+h4 {
+  color:white;
+  font-size:15px;
+  font-size: 1em;
+  line-height: 1.5em;
+  font-family: "Whitney SSm A", "Whitney SSm B", "Avenir", "Segoe UI", "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

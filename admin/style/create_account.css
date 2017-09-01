@@ -23,8 +23,8 @@ h3{
 
 #board{
    border:2px solid #c2a661;
-   background-color:#C0C0C0;
-   width:950px;
+   opacity: 0.9;
+   width:850px;
    border-radius: 7px;
 }
 
@@ -33,10 +33,11 @@ input[type=text], input[type=password]{
   padding:14px 15px;
   margin: 7px 0;
   display:inline-block;
+  background-color:#FFF0F5;
 }
 
 label{
-  color:#800000;
+  color:#9A1111;
   margin-left:10px;
 }
 
@@ -65,4 +66,8 @@ label{
 .signupbtn:hover{
   color:#FFE4E1;
   text-shadow:none;
+}
+
+a{
+  color:white;
 }
