@@ -1,0 +1,94 @@
+
+.main{
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height: 100vh;
+
+}
+
+.left{
+
+  background:white;
+  flex-direction:column;
+  flex: 0 0 75%;
+}
+
+.right{
+
+  flex-direction:column;
+  background:green;
+  justify-content: space-between;
+  flex: 0 0 25%;
+}
+
+#right-up{
+  background:yellow;
+  height:20%;
+}
+
+#right-center{
+  background:red;
+
+  height:20%;
+}
+
+#right-bottom{
+  background:blue;
+  height:20%;
+}
+
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inside{
+  margin-bottom:20px;
+}
+
+.inputfile + label, input[name="submit"]  {
+    width:20%;
+    height:35px;
+    display:block;
+    font-family: "Whitney SSm A", "Whitney SSm B", "Avenir", "Segoe UI", "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size:16px;
+    font-weight:bold;
+    color:#fff;
+    text-decoration:none;
+    /*text-transform:uppercase;*/
+    text-align:center;
+    text-shadow:3px 2px 0px black;
+    padding-top:6px;
+    position:relative;
+    border: none;
+    cursor:pointer;
+    background-color: #0A1249;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius:5px;
+    box-shadow: inset 0px 1px 0px #800000, 0px 5px 0px 0px #c2a661, 0px 10px 5px #999;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover, input[name="submit"]:hover {
+    background-color: #B22222;
+}
+
+.image{
+  justify-content: center;
+  flex-direction:column;
+  display:flex;
+  border: 3px solid green;
+  margin: auto;
+  margin-bottom:20px;
+  margin-top:80px;
+  width:23%;
+  height:30%;
+}

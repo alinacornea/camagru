@@ -11,7 +11,8 @@ svg {
   position: relative;
   margin: 0 auto;
   right: 25%;
-  font-size: calc(3px + 2.5vw);
+  /*font-size: calc(4px + 2.5vw);*/
+  font-size:4.5vw;
 }
 
 h1 {

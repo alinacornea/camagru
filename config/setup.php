@@ -9,7 +9,7 @@
     {
       echo "Conection succesfully" . "<br/>";
     }
-  }''
+  }
   catch (PDOException $e) {
       echo "Conection failed" . $e->getMessage() ."<br/>";
       die();
@@ -40,12 +40,12 @@ try {
     creation_date DATE
   )");
 
-  $conn->exec("CREATE TABLE IF NOT EXISTS Test (
-    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    category VARCHAR(50) NOT NULL,
-    name VARCHAR(50) NOT NULL,
-    color CHAR(255) NOT NULL
-  )");
+  // $conn->exec("CREATE TABLE IF NOT EXISTS Test (
+  //   id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  //   category VARCHAR(50) NOT NULL,
+  //   name VARCHAR(50) NOT NULL,
+  //   color CHAR(255) NOT NULL
+  // )");
 
   if ($conn)
   {

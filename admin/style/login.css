@@ -52,7 +52,6 @@ input[name="submit"]{
   border: none;
   cursor:pointer;
   background-color: #c2a661;
-  background-image: linear-gradient(top,#3db0a6,#3111);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -145,7 +144,6 @@ input[name="reset"]{
   position:relative;
   border: none;
   background-color: #B22222;
-  background-image: linear-gradient(top,#B22222,#3111);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
