@@ -1,6 +1,6 @@
 <?php
   include('../../shared/header.php');
-  if(!empty($_FILES['file']))
+  if(!empty($_FILES['file']) && $_POST['submit'] === "Upload Image")
   {
     $permitted = array('image/gif', 'image/jpeg', 'image/jpg','image/png', 'image/pjpeg', 'text/plain'); //Set array of permittet filetypes
     $error = true; //Define an error boolean variable
@@ -13,9 +13,16 @@
             $error = false; //Yay! We can go through
             $filetype = explode("/",$_FILES['file']['type']); //Save the filetype and explode it into an array at /
             $filetype = $filetype[0]; //Take the first part. Image/text etc and stomp it into the filetype variable
+            $type = $filetype[1];//send the variale type to the style for using gd later
         }
     }
-    if( $error == false ) //If the file is permitted
+
+    if ($error == true){
+          echo "<script>alert('Not a permitted filetype.')</script>";
+          echo "<script>window.open('upload_picture.php', '_self')</script>";
+    }
+
+    if($error == false ) //If the file is permitted
     {
         move_uploaded_file($_FILES["file"]["tmp_name"], "uploads/" . $_FILES["file"]["name"]); //Move the file from the temporary position till a new one.
         if($filetype == "image" ) //If the filetype is image, show it!
@@ -40,13 +47,14 @@
         }
     }
     else{
-      echo "Not permitted filetype.";
-      }
+      echo "<script>alert('Please choose a file before uploading.')</script>";
+      echo "<script>window.open('upload_picture.php', '_self')</script>";
+    }
   }
 ?>
 
 
-<link rel="stylesheet" href="../style/index3.css">
+<link rel="stylesheet" href="../style/index.css">
   <div align="center">
       <form action="upload_picture.php" method="post" enctype="multipart/form-data">
           <input type="file"name="file" id="file" class="inputfile">

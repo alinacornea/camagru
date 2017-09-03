@@ -1,33 +1,30 @@
 <?php
-  // phpinfo();
   include('../../shared/header.php');
-  header("Content-type: image/png");
-  $handle = ImageCreate(130, 50) or die ("can't create the image");
-  $txt_color = imagecolorallocate($handle, 250, 0, 0);
-  $bg_color = imagecolorallocate($handle, 0, 0, 0);
+  $file = $_GET['file'];
+  $id = $_GET['id'];
+  $img_name = "uploads/".$file;
 
-  imagestring($handle, 5, 5, 18, "hello", $txt_color);
+  function image_type($file){
 
-  print(imagepng($handle));
+    return $type;
+  }
 
+  if ($id == 1){
+    $img = imagecreatefrompng ($img_name);
+    imagefilter($img, IMG_FILTER_GRAYSCALE);
+    $imgname = "uploads/result_".$file;
+    imagepng($img, $imgname ); // save image as gif
+    imagedestroy($img);
 
-  // $file = $_GET['file'];
-  // if(!file_exists('upload2.png')) {
-  //   $img = imagecreatefrompng('dw-manipulate-me.png');
-  //   imagefilter($img,IMG_FILTER_GRAYSCALE);
-  //   imagepng($img,'upload2.png');
-  //   imagedestroy($img);
-  // }
+  }
 ?>
 
 
-
-
-<link rel="stylesheet" href="../style/index3.css">
+<link rel="stylesheet" href="../style/index.css">
     <div class= "edit">
-      <a href="style_picture.php"> <img src="../images/arrow-back.png" class="arrow-back"> </a>
-      <img src="uploads/<?php echo $result; ?>" class="image">
-      <a href="style_picture.php"><img src="../images/arrow-next.png"class="arrow-next"> </a>
+      <a href="style_picture.php?id=<?php if($id>0&&$id<=4){echo($id-1);}else{echo "4";}?>&file=<?php echo $file; ?>"> <img src="../images/arrow-back.png" class="arrow-back"> </a>
+      <img src="<?php if($id==1){echo$imgname;}else{echo$img_name;}?>" class="image">
+      <a href="style_picture.php?id=<?php if($id>=0&&$id<4){echo($id+1);}else{echo "0";}?>&file=<?php echo $file; ?>"><img src="../images/arrow-next.png"class="arrow-next"> </a>
     </div>
     <div align="center" class="inside">
       <form action="save_picture.php" method="post" enctype="multipart/form-data" >
@@ -44,3 +41,5 @@
 <?php
   include('../../shared/footer.php');
 ?>
+
+<!-- if ($id == 2) {echo "1";} else if ($id == 3) {echo "2";} else {echo "0";} -->
