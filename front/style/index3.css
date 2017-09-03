@@ -15,7 +15,6 @@
 }
 
 .right{
-
   flex-direction:column;
   background:green;
   justify-content: space-between;
@@ -29,7 +28,6 @@
 
 #right-center{
   background:red;
-
   height:20%;
 }
 
@@ -40,8 +38,8 @@
 
 
 .inputfile {
-	width: 0.1px;
-	height: 0.1px;
+	width: 0px;
+	height: 0px;
 	opacity: 0;
 	overflow: hidden;
 	position: absolute;
@@ -51,21 +49,19 @@
 .inside{
   margin-bottom:20px;
 }
-
 .inputfile + label, input[name="submit"]  {
     width:20%;
-    height:35px;
+    height:auto;
     display:block;
     font-family: "Whitney SSm A", "Whitney SSm B", "Avenir", "Segoe UI", "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size:16px;
+    font-size: calc(0.35em + 1vmin);
     font-weight:bold;
     color:#fff;
     text-decoration:none;
-    /*text-transform:uppercase;*/
     text-align:center;
     text-shadow:3px 2px 0px black;
-    padding-top:6px;
     position:relative;
+    padding:8px;
     border: none;
     cursor:pointer;
     background-color: #0A1249;
@@ -76,19 +72,47 @@
     box-shadow: inset 0px 1px 0px #800000, 0px 5px 0px 0px #c2a661, 0px 10px 5px #999;
 }
 
-.inputfile:focus + label,
-.inputfile + label:hover, input[name="submit"]:hover {
+.inputfile + label{
+  width:19%
+}
+
+.inputfile:focus + label, .inputfile + label:hover, input[name="submit"]:hover {
     background-color: #B22222;
 }
 
-.image{
+
+.edit{
   justify-content: center;
-  flex-direction:column;
   display:flex;
-  border: 3px solid green;
+}
+
+
+.edit a{
+  justify-content: center;
+  display:flex;
+}
+
+
+.image{
   margin: auto;
   margin-bottom:20px;
   margin-top:80px;
   width:23%;
   height:30%;
+}
+
+.arrow-next{
+  margin: auto;
+  margin-bottom:20px;
+  margin-top:80px;
+  width:23%;
+  height:60%;
+}
+
+.arrow-back{
+  margin: auto;
+  margin-bottom:20px;
+  margin-top:80px;
+  width:23%;
+  height:60%;
 }

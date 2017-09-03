@@ -1,7 +1,7 @@
 
 
 body{
-  background-image: url("../images/max.jpg");
+  /*background-image: url("../images/max.jpg");*/
 }
 
 .text {
@@ -39,7 +39,7 @@ h1 {
 #home{
  float: left;
  margin: 0 auto;
- width:4%;
+ width:5%;
  height:auto;
  padding:0;
 }

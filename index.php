@@ -15,7 +15,7 @@
 
     <div class="left"> left side  will display pictures</div>
     <div class="right"> right side
-      <div id="right-up"> <a href= "front/display/upload_picture.php?login=<?php echo $_GET['login'];?>"> Upload picture </a></div>
+      <div id="right-up"> <a href= "front/display/upload_picture.php"> Upload picture </a></div>
       <div id="right-center"><a href= "front/display/take_picture.php?login=<?php echo $_GET['login'];?>"> Take picture </a> </div>
       <div id="right-bottom"><a href= "front/display/edit_picture.php?login=<?php echo $_GET['login'];?>"> Edit picture </a></div>
 

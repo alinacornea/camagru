@@ -20,7 +20,12 @@
         move_uploaded_file($_FILES["file"]["tmp_name"], "uploads/" . $_FILES["file"]["name"]); //Move the file from the temporary position till a new one.
         if($filetype == "image" ) //If the filetype is image, show it!
         {
-          echo '<img src="uploads/'.$_FILES["file"]["name"].'" class="image">';
+          $file = $_FILES["file"]["name"];
+          echo '<div class="edit">';
+          echo '<a href="style_picture.php"> <img src="../images/arrow-back.png" class="arrow-back"> </a>';
+          echo '<img src="uploads/'.$file.'" class="image">';
+          echo '<a href="style_picture.php?id=1&file='.$file.'"><img src="../images/arrow-next.png"class="arrow-next"> </a>';
+          echo '</div>';
           ?>
           <div class="inside" align="center">
             <form action="save_picture.php?login=<?php echo $_GET['login'];?>" method="post" enctype="multipart/form-data" >
@@ -41,15 +46,15 @@
 ?>
 
 
-<link rel="stylesheet" href="../style/index.css">
+<link rel="stylesheet" href="../style/index3.css">
   <div align="center">
-      <form action="upload_picture.php?login=<?php echo $_GET['login'];?>" method="post" enctype="multipart/form-data">
+      <form action="upload_picture.php" method="post" enctype="multipart/form-data">
           <input type="file"name="file" id="file" class="inputfile">
-          <label for="file"><b> Choose a file</b> </label> <br/>
+          <label for="file"> Choose a file </label> <br/>
           <input type="submit" value="Upload Image" name="submit">
         </form>
       </div>
 
-<?php
+<!-- <?php
   include('../../shared/footer.php');
-?>
+?> -->
