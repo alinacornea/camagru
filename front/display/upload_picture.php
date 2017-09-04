@@ -1,8 +1,17 @@
 <?php
+  session_start();
   include('../../shared/header.php');
-  if(!empty($_FILES['file']) && $_POST['submit'] === "Upload Image")
+
+  if (!isset($_SESSION['login']))
   {
-    $permitted = array('image/gif', 'image/jpeg', 'image/jpg','image/png', 'image/pjpeg', 'text/plain'); //Set array of permittet filetypes
+    $msg =  "You need to log in first";
+    echo "<script> alert('$msg');window.open('../../admin/user/login.php', '_self'); </script>";
+    die();
+  }
+
+  if(!empty($_FILES['file']['name']) && $_POST['submit'] === "Upload Image")
+  {
+    $permitted = array('image/gif', 'image/jpeg','image/png', 'image/pjpeg', 'text/plain'); //Set array of permittet filetypes
     $error = true; //Define an error boolean variable
     $filetype = ""; //Just define it empty.
 
@@ -29,9 +38,9 @@
         {
           $file = $_FILES["file"]["name"];
           echo '<div class="edit">';
-          echo '<a href="style_picture.php"> <img src="../images/arrow-back.png" class="arrow-back"> </a>';
+          echo '<a href="style_picture.php?id=4&type='.$_FILES['file']['type'].'&file='.$file.'"> <img src="../images/arrow-back.png" class="arrow-back"> </a>';
           echo '<img src="uploads/'.$file.'" class="image">';
-          echo '<a href="style_picture.php?id=1&file='.$file.'"><img src="../images/arrow-next.png"class="arrow-next"> </a>';
+          echo '<a href="style_picture.php?id=1&type='.$_FILES['file']['type'].'&file='.$file.'"><img src="../images/arrow-next.png"class="arrow-next"> </a>';
           echo '</div>';
           ?>
           <div class="inside" align="center">
@@ -45,10 +54,6 @@
         {
           echo nl2br(file_get_contents("uploads/".$_FILES["file"]["name"]) );
         }
-    }
-    else{
-      echo "<script>alert('Please choose a file before uploading.')</script>";
-      echo "<script>window.open('upload_picture.php', '_self')</script>";
     }
   }
 ?>
