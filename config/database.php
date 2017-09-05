@@ -13,7 +13,7 @@
       // $conn->exec('CREATE DATABASE IF NOT EXISTS camagru');
       if ($conn)
        {
-         echo "Conection succesfully" . "<br/>";
+        //  echo "Conection succesfully" . "<br/>";
          return $conn;
        }
     }

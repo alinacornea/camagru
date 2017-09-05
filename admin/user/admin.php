@@ -1,7 +1,5 @@
-<?php  session_start(); ?>
-
 <?php
-// require_once('../../initialize.php');
+  session_start();
   include('../../shared/header.php');
 ?>
 

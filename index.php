@@ -3,21 +3,62 @@
 ?>
 
 <link rel="stylesheet" href="front/style/index.css">
-<!-- <head>
-  <meta charset="utf-8">
-  <title>Vintage - store </title>
-  <link rel="icon" href="images/rose.png"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono&effect=destruction">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
-</head> -->
-
   <section class="main">
 
-    <div class="left"> left side  will display pictures</div>
+    <div class="left">
+      <?php
+        require_once('config/database.php');
+        try{
+          $db = getDB();
+          $stmt = $db->prepare("SELECT * FROM Images");
+          $stmt->execute();
+          ?>
+          <div class ="images">
+          <?php
+          while ($data = $stmt->fetch(PDO::FETCH_ASSOC))
+          {
+            $id = $data['id'];
+            $title = $data['title'];
+            $img = $data['img_path'];
+            $likes = $data['likes'];
+            $login = $data['login'];
+            $comments = $data['comments'];
+            $creation = $data['creation_date'];
+          ?>
+
+          <div class="each">
+            <div id = "title"> <?php echo $login;?> </div>
+            <div align="center"><img id = "image1" src = "front/save/user_images/<?php echo $img;?>" /> </div>
+            <div align="right">
+              <!-- <a href="admin/database/like_this.php?id=<?php echo $id; ?>"> -->
+              <?php
+                session_start();
+                $login = $_SESSION['login'];
+              ?>
+                <img id= "likes" src = "front/images/icon_star.png"/>
+              <!-- </a>  -->
+              <?php echo " Like ".$likes;?>
+
+              </div>
+
+
+
+            <div id="comments" align=""> <?php echo $comments;?></div>
+          </div>
+
+      <?php } }
+          catch(PDOException $e) {
+          echo '{"Error inserting":{"text":'. $e->getMessage() .'}}';
+        }
+        // include('../shared/footer.php');
+      ?>
+      </div>
+
+    </div>
     <div class="right"> right side
-      <div id="right-up"> <a href= "front/display/upload_picture.php"> Upload picture </a></div>
-      <div id="right-center"><a href= "front/display/take_picture.php?login=<?php echo $_GET['login'];?>"> Take picture </a> </div>
-      <div id="right-bottom"><a href= "front/display/edit_picture.php?login=<?php echo $_GET['login'];?>"> Edit picture </a></div>
+      <div id="right-up"> <a href= "front/save/upload_picture.php"> Upload picture </a></div>
+      <div id="right-center"><a href= "front/save/take_picture.php?login=<?php echo $_GET['login'];?>"> Take picture </a> </div>
+      <div id="right-bottom"><a href= "front/save/edit_picture.php?login=<?php echo $_GET['login'];?>"> Edit picture </a></div>
 
     </div>
 

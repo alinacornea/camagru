@@ -32,7 +32,6 @@ try {
   $conn->exec("CREATE TABLE IF NOT EXISTS Images (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
     title VARCHAR(50) NOT NULL,
-    category VARCHAR(50) NOT NULL,
     img_path CHAR(255) NOT NULL,
     login VARCHAR(50) NOT NULL,
     likes INT,
