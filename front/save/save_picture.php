@@ -32,16 +32,16 @@
     $img = $id ."_".$file;
     copy($path, "user_images/$img");
     $likes = 0;
-    $comments = "";
+    $comments_nb = 0;
 
     try{
       $db = getDB();
-      $stmt = $db->prepare("INSERT INTO Images(title,img_path,login,likes,comments,creation_date) VALUES (:file,:img,:login,:likes,:comments,:creation)");
+      $stmt = $db->prepare("INSERT INTO Images(title,img_path,login,likes,comments_nb,creation_date) VALUES (:file,:img,:login,:likes,:comments_nb,:creation)");
       $stmt->bindParam("file", $file,PDO::PARAM_STR) ;
       $stmt->bindParam("img", $img,PDO::PARAM_STR) ;
       $stmt->bindParam("login", $login,PDO::PARAM_STR) ;
       $stmt->bindParam("likes", $likes,PDO::PARAM_INT) ;
-      $stmt->bindParam("comments", $comments,PDO::PARAM_STR);
+      $stmt->bindParam("comments_nb", $comments_nb,PDO::PARAM_INT);
       $creation = date('Y-m-d H:i:s');
       $stmt->bindParam("creation", $creation,PDO::PARAM_STR) ;
       $stmt->execute();
@@ -53,7 +53,7 @@
       echo '{"Error inserting":{"text":'. $e->getMessage() .'}}';
     }
     $name->delete("uploads");
-    
+
     echo "<script>alert('$login, your picture was saved!')</script>";
     echo "<script>window.open('../../index.php', '_self')</script>";
   }

@@ -27,12 +27,6 @@
         $code = $data['activation'];
 
         $id=$userClass->userReset($new, $login);
-        print($code);
-        print"<br/>";
-        print($activation);
-        print"<br/>";
-        print($id);
-
         if ($code == $activation && $id){
           $_SESSION['login']=$login;
           $msg = "$login, Your password was changed succesfully!.";

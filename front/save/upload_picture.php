@@ -56,7 +56,7 @@
 
 <link rel="stylesheet" href="../style/index.css">
   <div align="center">
-      <form action="upload_picture.php" method="post" enctype="multipart/form-data">
+      <form action="upload_picture.php?id=0&file=<?php echo $file?>" method="post" enctype="multipart/form-data">
           <input type="file"name="file" id="file" class="inputfile">
           <label for="file"> Choose a file </label> <br/>
           <input type="submit" value="Upload Image" name="submit">

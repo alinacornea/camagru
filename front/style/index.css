@@ -9,10 +9,9 @@
 /*left side css style*/
 .left{
 
-  /*background:white;*/
-  /*flex-direction:column;*/
   flex: 0 0 90%;
   flex-direction: row;
+  height:auto;
 }
 
 .images{
@@ -26,41 +25,119 @@
 .each{
   background-color:#11183C;
   border-radius: 25px;
-  margin-top:10px;
+  margin-top:15px;
   margin-left:20px;
   width:25%;
   max-width:370px;;
-  padding:20px;
+  padding:8px;
+
+
 }
 
 #image1{
-  width:65%;
+  width:60%;
   height:auto;
 }
 
 #likes{
-  width:10%;
+  width:12%;
   max-width:40px;
   color:white;
-  cursor: url('../images/log.png'), auto;
 }
 
 
 #title{
-  color:white;
-  font-size:1vw;
+  color:#B22222;
+  font-family: monospace;
+  font-size:1.3vw;
+  font-size-adjust:auto;
+  z-index:1;
+  /*text-align:center;*/
 }
 
-#comments{
-
+@media (min-width: 700px) {
+  #title{
+    /* Minimum font size */
+    font-size: 14px
+  }
 }
+
+.comments{
+  font-family: monospace;
+  color:#c2a661;
+  border:0.7px solid #ccc;
+  overflow:auto;
+  height:80px;
+  margin-top:10px;
+  border-radius: 5px;
+  font-size:0.8vw;
+  font-size-adjust:auto;
+  z-index:1;
+  /*text-align:center;*/
+}
+
+@media (min-width: 700px) {
+.comments{
+  /* Minimum font size */
+  font-size: 11px
+}
+}
+
+
 #likes:hover{
-  width:40px;
+  /*width:40px;*/
+  background-color:#11183C;
+  border-radius: 5px;
+}
+
+.comments:hover{
+  background-color:black;
 }
 
 .each:hover{
-  background-color:#34345A;
+  background-image:url("../images/oep.jpg");
 }
+
+#nb_likes{
+  background-color:#11183C;
+  border-radius: 5px;
+  color:#B22222;
+  float:right;
+}
+
+#new_comment{
+  float:left;
+  color:#c2a661;
+  background-color:black;
+  border-radius: 5px;
+  margin-top:10px;
+  height:30px;
+  font-style:italic;
+  font-family: monospace;
+  font-size:0.8vw;
+  font-size-adjust:auto;
+  width:60%;
+  margin-left:5px;
+  margin-bottom:7px;
+
+}
+
+@media (min-width: 700px) {
+  #new_comment{
+    font-size: 12px
+  }
+}
+
+#post{
+  color:#c2a661;
+  float:left;
+  margin-left: 10px;
+  border-radius: 5px;
+  font-family: monospace;
+  background-color: black;
+}
+
+
 
 /*-----------------------------------------------------------------*/
 /*right side css style*/

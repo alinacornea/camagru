@@ -8,7 +8,7 @@
   <meta charset="utf-8">
   <title>Camagru</title>
   <link rel="icon" href="http://localhost:8080/camagru/front/images/icon_star.png"/>
-  <link rel="stylesheet" href="http://localhost:8080/camagru/front/style/header1.css">
+  <link rel="stylesheet" href="http://localhost:8080/camagru/front/style/header.css">
   </head>
   <body>
     <header>
@@ -44,3 +44,4 @@
       </h1>
       </div>
     </header>
+    <div class ="content">
