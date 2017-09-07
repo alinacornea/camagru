@@ -13,6 +13,6 @@
 
 <img src="LOc8UxxVEF.gif" width="700" height="900">
 
-##Install
+## Install
 - Make sure you have install PHP with GD library,  connection to a database and mysql running.</br>
 - run: "..config/setup.php" & main page is "index.php";
