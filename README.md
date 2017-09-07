@@ -9,4 +9,4 @@
 <li> Comment, like any picture and receive a email notification about. </li>
 
 ![](http://g.recordit.co/AQ0EEZGVL1.gif | width=100)
-<img  src="http://g.recordit.co/AQ0EEZGVL1.gif" width="100" height="100" >
+<img  src="http://g.recordit.co/AQ0EEZGVL1.gif" width="50" height="50" >
