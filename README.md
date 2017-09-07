@@ -9,4 +9,4 @@
 <li> Comment, like any picture and receive a email notification about. </li>
 
 
-![screenshot](http://g.recordit.co/AQ0EEZGVL1.gif)
+<img src="http://g.recordit.co/AQ0EEZGVL1.gif">
