@@ -8,6 +8,6 @@
 <li> Allow user to upload any type of image and be able to edit using GD library of PHP. </li>
 <li> Comment, like any picture and receive a email notification about. </li>
 
-![image](200w_d.gif)
+![image](http://g.recordit.co/LOc8UxxVEF.gif)
 
 
