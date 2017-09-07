@@ -9,5 +9,5 @@
 <li> Comment, like any picture and receive a email notification about. </li> </br>
 
 ![image](LOc8UxxVEF.gif)
-<img src="LOc8UxxVEF.gif" width="100" height="100">
+<img src="LOc8UxxVEF.gif" width="780" height="1000">
 
