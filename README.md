@@ -9,4 +9,5 @@
 <li> Comment, like any picture and receive a email notification about. </li>
 
 ![image](http://g.recordit.co/LOc8UxxVEF.gif)
+![Alt Text](http://g.recordit.co/LOc8UxxVEF.gif)
 <img  src="http://g.recordit.co/LOc8UxxVEF.gif" width="100" height="100" />
