@@ -6,8 +6,8 @@
 <li> Store everything in database using PDO.</li>
 <li> User management: use encrypted passwords, send a verification email and check the level of </br> complexity of passwords.</li>
 <li> Allow user to upload any type of image and be able to edit using GD library of PHP. </li>
-<li> Comment, like any picture and receive a email notification about. </li>
+<li> Comment, like any picture and receive a email notification about. </li> </br>
 
 ![image](LOc8UxxVEF.gif)
-
+<img src="LOc8UxxVEF.gif" width="100" height="100">
 
