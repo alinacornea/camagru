@@ -8,5 +8,4 @@
 <li> Allow user to upload any type of image and be able to edit using GD library of PHP. </li>
 <li> Comment, like any picture and receive a email notification about. </li>
 
-
-<img src="http://g.recordit.co/AQ0EEZGVL1.gif">
+![](http://g.recordit.co/AQ0EEZGVL1.gif)
