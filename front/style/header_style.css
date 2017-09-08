@@ -7,17 +7,17 @@ body{
   height:100vh;
   display:flex;
   flex-direction:column;
-
 }
 
 .content{
-  flex:1 0 auto;
-  padding:20px;
+  flex:3 0 auto;
+  /*padding:20px;*/
 }
 
 .text {
   fill: url(#gr-radial);
 }
+
 svg {
   position: relative;
   margin: 0 auto;
@@ -39,14 +39,11 @@ h1 {
 }
 
 #create{
-  color:white;
   margin-top:-30px;
   font-family:cursive;
   font-style:italic;
   color:#B8860B;
   font-size: calc(2px + 2.5vw);
-
-
 }
 
 
@@ -59,22 +56,11 @@ h1 {
  padding:0;
 }
 
-#admin{
-  float: right;
-  display:block;
-  width:5%;
-  height:auto;
-  max-width:70px;
-  margin-right:10px;
-  cursor:not-allowed;
-  margin: 0 auto;
-  padding: 0;
-}
 
 #logout{
   float: right;
   margin: 0 auto;
-  width:5%;
+  width:7%;
   height:auto;
   padding: 0;
   max-width:70px;
@@ -83,7 +69,7 @@ h1 {
 
 #login{
   float: right;
-  width:6%;
+  width:7%;
   height:auto;
   max-width:70px;
   margin: 0 auto;

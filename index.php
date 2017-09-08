@@ -49,7 +49,7 @@
 
   }
   try{
-    $stmt = $db->prepare("SELECT * FROM Images WHERE login != '$user'");
+    $stmt = $db->prepare("SELECT * FROM Images");
     $stmt->execute();
 
 ?>
@@ -76,7 +76,7 @@
             <form action="" method="get" align="right">
               <div id = "title"> <?php echo $login;?> </div>
               <input type="hidden" name="action" value="<?php echo $id;?>">
-              <input type="image" id="likes" src = "front/images/silver.png"/>
+              <input title ="LIKE" type="image" id="likes" src = "front/images/silver.png"/>
             </form>
 
             <div align="center"><img id = "image1" src = "front/save/user_images/<?php echo $img;?>" /> </div>
@@ -113,9 +113,9 @@
 
     </div>
     <div class="right"> right side
-      <div id="right-up"> <a href= "front/save/upload_picture.php"> Upload picture </a></div>
-      <div id="right-center"><a href= "front/save/take_picture.php?login=<?php echo $_GET['login'];?>"> Take picture </a> </div>
-      <div id="right-bottom"><a href= "front/save/edit_picture.php?login=<?php echo $_GET['login'];?>"> Edit picture </a></div>
+      <div id="right-items"> <a href= "front/save/upload_picture.php"> <img src="front/images/upload.ico" width="90%">  </a></div>
+      <div id="right-items"><a href= "front/save/take_picture.php?login=<?php echo $_GET['login'];?>"> <img src="front/images/edit2.jpg" width="90%"></a> </div>
+      <div id="right-items"><a href= "front/save/edit_picture.php?login=<?php echo $_GET['login'];?>"><img src="front/images/globe2.jpg" width="90%"> </a></div>
 
     </div>
   </section>

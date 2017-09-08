@@ -8,7 +8,7 @@
   <meta charset="utf-8">
   <title>Camagru</title>
   <link rel="icon" href="http://localhost:8080/camagru/front/images/icon_star.png"/>
-  <link rel="stylesheet" href="http://localhost:8080/camagru/front/style/header.css">
+  <link rel="stylesheet" href="http://localhost:8080/camagru/front/style/header_style.css">
   </head>
   <body>
     <header>
@@ -36,10 +36,10 @@
     </text>
     <div id="create"> <?php if ($_SESSION[login]) echo $_SESSION[login].","; ?>  create your world !!
   </svg>
-  <a title="Home"href="http://localhost:8080/camagru/index.php?login=<?php echo $_GET['login']; ?>"> <img id="home" src="http://localhost:8080/camagru/front/images/rotate.gif" alt="Home"></a>
-        <a title="Admin" href="http://localhost:8080/camagru/admin/user/admin.php"><img id="admin" src="http://localhost:8080/camagru/front/images/admin.png" alt="Admin"></a>
-        <a title="View" href="http://localhost:8080/camagru/front/view.php"><img id="view" src="http://localhost:8080/camagru/front/images/view.png" alt="View"></a>
-        <a title="Logout" href="http://localhost:8080/camagru/admin/user/logout.php"><img id="logout" src="http://localhost:8080/camagru/front/images/out.png" alt="Logout"></a>
+  <a title="Home"href="http://localhost:8080/camagru/index.php"> <img id="home" src="http://localhost:8080/camagru/front/images/rotate.gif" alt="Home"></a>
+        <!-- <a title="Admin" href="http://localhost:8080/camagru/admin/user/admin.php"><img id="admin" src="http://localhost:8080/camagru/front/images/admin.png" alt="Admin"></a> -->
+        <a title="View" href="http://localhost:8080/camagru/front/view.php"><img id="view" src="http://localhost:8080/camagru/front/images/account.png" alt="View"></a>
+        <a title="Logout" href="http://localhost:8080/camagru/admin/user/logout.php"><img id="logout" src="http://localhost:8080/camagru/front/images/logout.png" alt="Logout"></a>
         <a title="Login" href="http://localhost:8080/camagru/admin/user/login.php"> <img id="login"src="http://localhost:8080/camagru/front/images/log.png" alt="Login"></a>
       </h1>
       </div>

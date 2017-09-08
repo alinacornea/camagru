@@ -1,5 +1,5 @@
 </div>
-<link rel="stylesheet" href="http://localhost:8080/camagru/front/style/footer1.css">
+<link rel="stylesheet" href="http://localhost:8080/camagru/front/style/footer_style.css">
 <footer>
  <div class= "create"> <p> Create by: Cornea Alina</p>
     <p> Contact information: <a href="alinacornea18@gmail.com"><img id="email" src="http://localhost:8080/camagru/front/images/gmail.png" ></a>
