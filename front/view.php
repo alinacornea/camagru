@@ -34,6 +34,7 @@
     catch(PDOException $e) {
     echo '{"Error inserting":{"text":'. $e->getMessage() .'}}';
   }
-  // include('../shared/footer.php');
 ?>
 </div>
+
+<?php include('../shared/footer.php'); ?>
