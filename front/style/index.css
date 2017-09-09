@@ -3,8 +3,6 @@
   display:flex;
   flex-wrap: wrap;
   flex-direction: row;
-  height: 100vh;
-
 }
 /*left side css style*/
 .left{
@@ -22,14 +20,15 @@
 }
 
 .each{
-  background-color:#11183C;
   border-radius: 25px;
   margin-top:15px;
   margin-left:20px;
   width:24%;
   max-width:370px;;
   padding:8px;
-
+  background: #060923;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #928DAB, #060923);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #928DAB, #060923); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
@@ -44,13 +43,19 @@
   color:white;
 }
 
+#likes:hover{
+  background-color:#11183C;
+  border-radius: 5px;
+}
+
+
 
 #title{
-  color:#B22222;
   font-family: monospace;
   font-size:1.3vw;
   font-size-adjust:auto;
   z-index:1;
+  color:#c2a661;
 }
 
 @media (min-width: 700px) {
@@ -61,7 +66,7 @@
 
 .comments{
   font-family: monospace;
-  color:#c2a661;
+  color:black;
   border:0.7px solid #ccc;
   overflow:auto;
   height:80px;
@@ -78,18 +83,16 @@
 }
 }
 
-
-#likes:hover{
-  background-color:#11183C;
-  border-radius: 5px;
-}
-
 .comments:hover{
-  background-color:black;
+  background-color:#928DAB;
 }
 
 .each:hover{
-  background-image:url("../images/oep.jpg");
+  /*background-image:url("../images/oep.jpg");*/
+  background: #060923;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #928DAB, #060923);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #928DAB, #060923); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 #nb_likes{
@@ -123,7 +126,7 @@
 }
 
 #post{
-  color:#c2a661;
+  color:#B22222;
   float:left;
   margin-left: 10px;
   border-radius: 5px;
@@ -176,12 +179,16 @@
     padding:8px;
     border: none;
     cursor:pointer;
-    background-color: #0A1249;
+
+    background: #EB5757;
+    background: -webkit-linear-gradient(to bottom, #000000, #EB5757);
+    background: linear-gradient(to bottom, #000000, #EB5757);
+
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius:5px;
-    box-shadow: inset 0px 1px 0px #800000, 0px 5px 0px 0px #c2a661, 0px 10px 5px #999;
+    box-shadow: inset 0px 1px 0px #BD871A, 0px 5px 0px 0px #800000, 0px 10px 5px #999;
 }
 
 .inputfile + label{

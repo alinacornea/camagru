@@ -53,7 +53,10 @@
     $stmt->execute();
 
 ?>
+<script>
 
+// display full
+</script>
 
 
 <link rel="stylesheet" href="front/style/index.css">
@@ -79,7 +82,7 @@
               <input title ="LIKE" type="image" id="likes" src = "front/images/silver.png"/>
             </form>
 
-            <div align="center"><img id = "image1" src = "front/save/user_images/<?php echo $img;?>" /> </div>
+            <div align="center"><img id = "image1" src = "front/save/user_images/<?php echo $img;?>" onclick="lightbox()"/> </div>
 
             <div align="right">
               <div class="comments" align="left">
@@ -114,7 +117,7 @@
     </div>
     <div class="right"> right side
       <div id="right-items"> <a href= "front/save/upload_picture.php"> <img src="front/images/upload.ico" width="90%">  </a></div>
-      <div id="right-items"><a href= "front/save/take_picture.php?login=<?php echo $_GET['login'];?>"> <img src="front/images/edit2.jpg" width="90%"></a> </div>
+      <div id="right-items"><a href= "front/save/take_picture.php"> <img src="front/images/edit2.jpg" width="90%"></a> </div>
       <div id="right-items"><a href= "front/save/edit_picture.php?login=<?php echo $_GET['login'];?>"><img src="front/images/globe2.jpg" width="90%"> </a></div>
 
     </div>
