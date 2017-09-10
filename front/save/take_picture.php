@@ -1,72 +1,19 @@
 <?php
   session_start();
   include('../../shared/header.php');
-
 ?>
-<style>
-
-.booth{
-  margin-top:20px;
-
-}
-#video{
-  background-color:#666;
-  border:2px solid #800000;
-}
-
-.bottom{
-  display:flex;
-  justify-content:center;
-}
-
-.booth-capture{
-  margin-top:30px;
-  width:20%;
-  max-width:200px;
-  height:45px;
-  margin-left:10px;
-  font-family: monospace;
-  font-size:16px;
-  color:#fff;
-  text-decoration:none;
-  cursor:pointer;
-  text-shadow:1px 1px 0px #000000;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background: #EB5757;
-  background: -webkit-linear-gradient(to bottom, #000000, #EB5757);
-  background: linear-gradient(to bottom, #000000, #EB5757);
-  margin-top:10px;
-  border:none;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius:5px;
-  box-shadow: inset 0px 1px 0px #BD871A, 0px 5px 0px 0px #800000, 0px 10px 5px #999;
-}
-
-#canvas{
-  margin-top:30px;
-  width:50%;
-  height:50%;
-}
-
-</style>
-
-
-
+<link rel="stylesheet" href="../style/view_style.css">
 <div class="booth" align="center">
   <video autoplay="true"id = "video" width="50%" height="50%"> </video>
   <div class="bottom"><a href="#" id="capture" class="booth-capture"> Take picture </a>
+
   <input type="button" class="booth-capture" onclick="save()" value="Save picture"/></div>
+  <input type="hidden" name="image_data" id="image_data" />
+
   <canvas id ="canvas" width="400" height="300"> </canvas>
 </div>
 
-  <form method="post" accept-charset="utf-8" name="form1">
-      <input name="hidden_data" id='hidden_data' type="hidden"/>
-  </form>
-
+<script  src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"> </script>
 
 <script>
 
@@ -88,17 +35,52 @@
 
   function videoError(e) {
     alert("Error was detected!!")
-      // do something
   }
 
   document.getElementById('capture').addEventListener('click', function(){
     context.drawImage(video, 0, 0, 400, 300);
-    // window.location.href = canvas.toDataURL("image/png");
-    var data = canvas.toDataURL('image/png');
-    
-});
-
   });
+
+  function save(){
+    test = document.getElementById("test");
+    finish = document.getElementById('finish'),
+        finish.addEventListener('click',
+            function (ev) {
+                var data = canvas.toDataURL('image/png');
+                var data_img = photo.getAttribute('src');
+                var check = document.getElementById("video").getAttribute("style");
+                var check_img = document.getElementById("photo").getAttribute("style");
+                var check_canvas = document.getElementById("canvas").getAttribute("style")
+
+                if (check_canvas == "display:block") {
+                    test.setAttribute('value', data);
+                } else if (check_img == "display:block") {
+                    test.setAttribute('value', data_img);
+                }
+                document.getElementById("photo").setAttribute("src", "./script/image.php");
+                setTimeout(document.getElementById('zdp').submit(), 40);
+            }, false);
+    }
+
+
+
+    // var value = canvas.toDataURL('image/png');
+    //
+    // $.ajax({
+    // url:'t.php',
+    // type:'POST',
+    // data:{
+    //     data:value
+    //   }
+    // });
+
+    //
+    // var ajax = new XMLHttpRequest();
+    // var url = "camera.php";
+    //
+    // ajax.open("POST", url, false);
+    // ajax.setRequestHeader('Content-Type', 'application/x-www-form-ulrencoded');
+    // ajax.send(value);
 
 </script>
 
@@ -106,3 +88,44 @@
 <?php
     include('../../shared/footer.php');
 ?>
+
+<!-- function save() {
+
+    test = document.getElementById("test");
+    finish = document.getElementById('finish'),
+        finish.addEventListener('click',
+            function (ev) {
+                var data = canvas.toDataURL('image/png');
+                var data_img = photo.getAttribute('src');
+                var check = document.getElementById("video").getAttribute("style");
+                var check_img = document.getElementById("photo").getAttribute("style");
+                var check_canvas = document.getElementById("canvas").getAttribute("style")
+
+                if (check_canvas == "display:block") {
+                    test.setAttribute('value', data);
+                } else if (check_img == "display:block") {
+                    test.setAttribute('value', data_img);
+                }
+                document.getElementById("photo").setAttribute("src", "./script/image.php");
+                setTimeout(document.getElementById('zdp').submit(), 40);
+            }, false);
+}
+ -->
+
+<!--
+<?php
+// session_start();
+// header ("Content-type: image/png");
+// $extension = pathinfo($_SESSION['img_name'], PATHINFO_EXTENSION);
+// if ($extension == "png") {
+// 	$destination = imagecreatefrompng($_SESSION['img_name']);
+// }
+// else
+//     $destination = imagecreatefromjpeg($_SESSION['img_name']);
+// if (!empty($_SESSION['calque']))
+// {
+// 	if ($_SESSION['calque'] === "negative")
+// 		imagefilter($destination, IMG_FILTER_NEGATE);
+// 	else if ($_SESSION['calque'] === "grayscale")
+// 		imagefilter($destination, IMG_FILTER_GRAYSCALE);
+// }
