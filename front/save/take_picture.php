@@ -5,23 +5,51 @@
 <link rel="stylesheet" href="../style/view_style.css">
 <div class="booth" align="center">
   <video autoplay="true"id = "video" width="50%" height="50%"> </video>
-  <div class="bottom"><a href="#" id="capture" class="booth-capture"> Take picture </a>
+  <div class="bottom">
+    <img src="" id="photo" name="photo">
+    <input id="capture" type="button" class="booth-capture" value="Take picture"/>
+    <input id="save" type="button" class="booth-capture" onclick="save();" value="Save picture"/>
 
-  <input type="button" class="booth-capture" onclick="save()" value="Save picture"/></div>
-  <input type="hidden" name="image_data" id="image_data" />
+  </div>
+
 
   <canvas id ="canvas" width="400" height="300"> </canvas>
+  <div id="status"></div>
 </div>
 
-<script  src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"> </script>
+<script  src="ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"> </script>
 
-<script>
+<script type="text/Javascript">
+
+  function getXMLHttpRequest() {
+
+       var xhr = null;
+
+       if (window.XMLHttpRequest || window.ActiveXObject) {
+           if (window.ActiveXObject) {
+               try {
+                   xhr = new ActiveXObject("Msxml2.XMLHTTP");
+               } catch(e) {
+                   xhr = new ActiveXObject("Microsoft.XMLHTTP");
+               }
+           } else {
+               xhr = new XMLHttpRequest();
+           }
+       } else {
+           alert("You dont support XMLHTTPRequest...");
+           return null;
+       }
+
+       return xhr;
+   }
+
+
+
 
   var video = document.querySelector("#video");
 
   var canvas = document.getElementById('canvas'),
       context = canvas.getContext('2d');
-      // photo = document.getElementById('photo');
 
   navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
 
@@ -41,46 +69,24 @@
     context.drawImage(video, 0, 0, 400, 300);
   });
 
-  function save(){
-    test = document.getElementById("test");
-    finish = document.getElementById('finish'),
-        finish.addEventListener('click',
-            function (ev) {
-                var data = canvas.toDataURL('image/png');
-                var data_img = photo.getAttribute('src');
-                var check = document.getElementById("video").getAttribute("style");
-                var check_img = document.getElementById("photo").getAttribute("style");
-                var check_canvas = document.getElementById("canvas").getAttribute("style")
-
-                if (check_canvas == "display:block") {
-                    test.setAttribute('value', data);
-                } else if (check_img == "display:block") {
-                    test.setAttribute('value', data_img);
-                }
-                document.getElementById("photo").setAttribute("src", "./script/image.php");
-                setTimeout(document.getElementById('zdp').submit(), 40);
-            }, false);
-    }
+  function save()
+  {
+     var canvasData = canvas.toDataURL("image/png");
+     document.write(canvasData);
 
 
+     var xhr = getXMLHttpRequest();
+     xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+           photo.setAttribute('src', xhr.responseText);
+          }
+    };
+     xhr.open('POST', rootURI + 'camera.php', true);
+     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    //  ajax.send("imgData=" + canvasData);
+     xhr.send(JSON.stringify(canvasData));
 
-    // var value = canvas.toDataURL('image/png');
-    //
-    // $.ajax({
-    // url:'t.php',
-    // type:'POST',
-    // data:{
-    //     data:value
-    //   }
-    // });
-
-    //
-    // var ajax = new XMLHttpRequest();
-    // var url = "camera.php";
-    //
-    // ajax.open("POST", url, false);
-    // ajax.setRequestHeader('Content-Type', 'application/x-www-form-ulrencoded');
-    // ajax.send(value);
+  }
 
 </script>
 
@@ -88,44 +94,3 @@
 <?php
     include('../../shared/footer.php');
 ?>
-
-<!-- function save() {
-
-    test = document.getElementById("test");
-    finish = document.getElementById('finish'),
-        finish.addEventListener('click',
-            function (ev) {
-                var data = canvas.toDataURL('image/png');
-                var data_img = photo.getAttribute('src');
-                var check = document.getElementById("video").getAttribute("style");
-                var check_img = document.getElementById("photo").getAttribute("style");
-                var check_canvas = document.getElementById("canvas").getAttribute("style")
-
-                if (check_canvas == "display:block") {
-                    test.setAttribute('value', data);
-                } else if (check_img == "display:block") {
-                    test.setAttribute('value', data_img);
-                }
-                document.getElementById("photo").setAttribute("src", "./script/image.php");
-                setTimeout(document.getElementById('zdp').submit(), 40);
-            }, false);
-}
- -->
-
-<!--
-<?php
-// session_start();
-// header ("Content-type: image/png");
-// $extension = pathinfo($_SESSION['img_name'], PATHINFO_EXTENSION);
-// if ($extension == "png") {
-// 	$destination = imagecreatefrompng($_SESSION['img_name']);
-// }
-// else
-//     $destination = imagecreatefromjpeg($_SESSION['img_name']);
-// if (!empty($_SESSION['calque']))
-// {
-// 	if ($_SESSION['calque'] === "negative")
-// 		imagefilter($destination, IMG_FILTER_NEGATE);
-// 	else if ($_SESSION['calque'] === "grayscale")
-// 		imagefilter($destination, IMG_FILTER_GRAYSCALE);
-// }
