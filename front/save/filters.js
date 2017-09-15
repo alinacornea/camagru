@@ -11,16 +11,10 @@
       filter: "grayscale(100%)"
     }, {
       name: "Bright",
-      filter: "brightness(180%)"
-    },{
-      name: "Hue",
-      filter: "hue-rotate(90deg)"
+      filter: "brightness(120%)"
     },{
       name: "Invert",
       filter: "invert(100%)"
-    },{
-      name: "Saturate",
-      filter: "saturate(300%)"
     },{
       name: "Sepia",
       filter: "sepia(100%)"

@@ -1,0 +1,49 @@
+.playground {
+  position: fixed;
+  top: 650px;
+  left: 0px;
+  width:40%;
+  bottom: 200px;
+  right: 0;
+  /*border: 1px solid white;*/
+}
+
+#filterButtons {
+  width: 300px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 3px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  color: white;
+  background: #23074d;
+  cursor:pointer;
+  background: -webkit-linear-gradient(to right, #cc5333, #23074d);
+  background: linear-gradient(to right, #cc5333, #23074d);
+  border-radius: 2px;
+  border:none;
+  box-shadow: 1px 2px #3B13B0;
+}
+
+.photo {
+  /*width:46%;
+  height:40%;*/
+  box-shadow: 3px 3px 3px #888888;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 17px;
+  background-color: white;
+  cursor: move;
+  transition:all 0.5s;
+}
+
+.0000photo:hover {
+  position: absolute;
+  -webkit-transform: translateY(-1px) translateX(-1px) rotate(0deg) scale(1.5);
+  z-index: 999;
+  box-shadow: 15px 15px 30px #666;
+}
