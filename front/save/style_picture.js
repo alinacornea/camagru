@@ -27,6 +27,7 @@
     var canvas = document.getElementById('canvas');
     var stack = document.getElementById("stack");
     var hidden = document.getElementById("hidden");
+    var top = document.getElementById("top");
     var canvasContext = canvas.getContext('2d');
 
     navigator.getUserMedia = (navigator.getUserMedia ||  navigator.webkitGetUserMedia ||  navigator.mozGetUserMedia ||  navigator.msGetUserMedia);
@@ -62,10 +63,11 @@
 
       function takePhoto() {
         let element = document.createElement("img");
-
         element.style.webkitFilter = video.style.webkitFilter;
+
         canvasContext.drawImage(video, 0, 0, 400, 300);
         element.src = canvas.toDataURL('image/png');
+        element.id = "transfer";
         hidden.value = element.src;
         document.getElementById("img_style").value = element.style.webkitFilter;
         var angle = getRandomNumberWithMax(30) - 15;
@@ -73,7 +75,11 @@
         element.style.top = getRandomNumberWithMax(50) + "px";
         element.style.left = getRandomNumberWithMax(50) + "px";
         element.className = "photo";
+
         element.addEventListener('dragstart', dragStart, false);
+        // ondrop="drop_st(event)" ondragover="allowDrop(event)"
+        element.addEventListener("ondrop", drop_st, false);
+        element.addEventListener("ondragover", allowDrop, false);
         stack.appendChild(element);
       }
 
@@ -165,6 +171,42 @@
     }
   })();
 
+  // save picture
   document.getElementById('save').addEventListener('click' ,function(){
     document.forms["form1"].submit();
   });
+
+  // drag and drop sticker
+  function allowDrop(e)
+  {
+      e.preventDefault();
+  }
+
+  function drag_st(e)
+  {
+      //store the position of the mouse relativly to the image position
+      e.dataTransfer.setData("mouse_position_x",e.clientX - e.target.offsetLeft );
+      e.dataTransfer.setData("mouse_position_y",e.clientY - e.target.offsetTop  );
+      e.dataTransfer.setData("image_id",e.target.id);
+  }
+
+  function drop_st(e)
+  {
+      e.preventDefault();
+      var canvas = document.getElementById('canvas');
+      var image = document.getElementById( e.dataTransfer.getData("image_id") );
+      ctx = canvas.getContext('2d');
+
+      var mouse_position_x = e.dataTransfer.getData("mouse_position_x");
+      var mouse_position_y = e.dataTransfer.getData("mouse_position_y");
+
+      // the image is drawn on the canvas at the position of the mouse when we lifted the mouse button
+      ctx.drawImage(image , e.clientX - canvas.offsetLeft - mouse_position_x , e.clientY - canvas.offsetTop - mouse_position_y, 100, 100 );
+  }
+
+  // function convertCanvasToImage() {
+  //     var canvas = document.getElementById('canvas');
+  //     var data = canvas.toDataURL("image/png");
+  //     alert(data);
+  //     window.open(data);
+  // }

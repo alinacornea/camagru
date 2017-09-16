@@ -9,10 +9,23 @@
   }
 ?>
 
+<style>
+#img1{
+  width:100px;
+  height:100px;
+}
+#img2{
+  width:100px;
+  height:100px;
+}
+</style>
+
+
 <link rel="stylesheet" href="../style/view.css">
 <link rel="stylesheet" href="../style/filters.css">
 <div class="booth" align="center">
-  <video id="video" width="35%" height="30%"></video>
+  <img id="img1" draggable="true" ondragstart="drag_st(event)" src='2.png'>
+  <video  id="video" width="35%" height="30%"></video>
   <form name="form1" action="camera.php" method="post">
     <input id="start" type="button" class="booth-capture" value="Start webcam"/>
     <input id="capture" type="button" class="booth-capture" value="Take picture"/>
@@ -23,11 +36,11 @@
   </form>
     <p>
       <div id="filterButtons"></div>
-      <canvas id="canvas" width="400" height="300" style="display: none;"></canvas>
+      <canvas id="canvas" ondrop="drop_st(event)" ondragover="allowDrop(event)" width="400" height="300" style="border: 1px solid gray" ></canvas>
     </p>
 </div>
 
-<script src = "filters.js"></script>
+<script src = "style_picture.js"></script>
 
 <?php
     include('../../shared/footer.php');
