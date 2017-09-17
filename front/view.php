@@ -59,7 +59,7 @@
       $creation = $data['creation_date'];
     ?>
 
-    <link rel="stylesheet" media= "all" href ="style/view_style.css"/>
+    <link rel="stylesheet" media= "all" href ="style/diplay.css"/>
     <div class="each">
       <!-- <div class = "title"> <?php echo $title;?> </div> -->
       <div class="likes"><?php echo $likes;?><img width="10%" src = "images/icon_star.png"/></div>

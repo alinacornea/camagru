@@ -57,30 +57,11 @@
         }, gotStream, error);
       }
 
-      function getRandomNumberWithMax (max) {
-        return Math.floor(Math.random() * max);
-      }
-
       function takePhoto() {
-        let element = document.createElement("img");
-        element.style.webkitFilter = video.style.webkitFilter;
-
-        canvasContext.drawImage(video, 0, 0, 400, 300);
-        element.src = canvas.toDataURL('image/png');
-        element.id = "transfer";
-        hidden.value = element.src;
-        document.getElementById("img_style").value = element.style.webkitFilter;
-        var angle = getRandomNumberWithMax(30) - 15;
-        element.style.transform="rotate(" + angle + "deg)";
-        element.style.top = getRandomNumberWithMax(50) + "px";
-        element.style.left = getRandomNumberWithMax(50) + "px";
-        element.className = "photo";
-
-        element.addEventListener('dragstart', dragStart, false);
-        // ondrop="drop_st(event)" ondragover="allowDrop(event)"
-        element.addEventListener("ondrop", drop_st, false);
-        element.addEventListener("ondragover", allowDrop, false);
-        stack.appendChild(element);
+        canvasContext.filter = video.style.webkitFilter;
+        canvasContext.drawImage(video, 0, 0, canvas.width, canvas.height);
+        canvas.className = "photo";
+        canvas.addEventListener('dragstart', dragStart, false);
       }
 
       var draggedElement;
@@ -90,7 +71,7 @@
         draggedElement = e.target;
         x = e.clientX - draggedElement.offsetLeft;
         y = e.clientY - draggedElement.offsetTop;
-        e.dataTransfer.setDragImage(draggedElement, x-340, y);
+        e.dataTransfer.setDragImage(draggedElement, x-240, y);
       }
 
       function drop(e) {
@@ -171,12 +152,12 @@
     }
   })();
 
-  // save picture
+  // save picture sending to php
   document.getElementById('save').addEventListener('click' ,function(){
     document.forms["form1"].submit();
   });
 
-  // drag and drop sticker
+  // drag and drop sticker on a image functions
   function allowDrop(e)
   {
       e.preventDefault();
@@ -194,6 +175,7 @@
   {
       e.preventDefault();
       var canvas = document.getElementById('canvas');
+
       var image = document.getElementById( e.dataTransfer.getData("image_id") );
       ctx = canvas.getContext('2d');
 
@@ -201,12 +183,10 @@
       var mouse_position_y = e.dataTransfer.getData("mouse_position_y");
 
       // the image is drawn on the canvas at the position of the mouse when we lifted the mouse button
-      ctx.drawImage(image , e.clientX - canvas.offsetLeft - mouse_position_x , e.clientY - canvas.offsetTop - mouse_position_y, 100, 100 );
+      ctx.drawImage(image , e.clientX - canvas.offsetLeft - mouse_position_x , e.clientY - canvas.offsetTop - mouse_position_y, 80, 80);
   }
 
-  // function convertCanvasToImage() {
-  //     var canvas = document.getElementById('canvas');
-  //     var data = canvas.toDataURL("image/png");
-  //     alert(data);
-  //     window.open(data);
-  // }
+  function save(){
+    hidden.value = canvas.toDataURL('image/png');
+    alert(hidden.value);
+  }
