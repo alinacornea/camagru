@@ -29,11 +29,11 @@ button {
   /*width:35%;
   height:40%;*/
   float:right;
-  border:2px solid grey;
+  /*border:2px solid grey;*/
   box-shadow: 3px 3px 3px #888888;
   top: 0;
   left: 0;
-  padding: 17px;
+  /*padding: 10px;*/
   background-color: white;
   cursor: move;
   transition:all 0.5s;
@@ -44,17 +44,6 @@ button {
   -webkit-transform: translateY(-1px) translateX(-1px) rotate(0deg) scale(1.5);
   z-index: 999;
   box-shadow: 15px 15px 30px #666;
-}
-
-
-#img1{
-  width:80px;
-  height:80px;
-}
-
-#img2{
-  width:80px;
-  height:80px;
 }
 
 #video{
@@ -106,6 +95,9 @@ button {
 }
 
 .stick{
-  background-color:white;
+  background: #EB5757;
+  background: -webkit-linear-gradient(to bottom, #000000, #EB5757);
+  background: linear-gradient(to bottom, #000000, #EB5757);
   margin-top:20px;
+  cursor:move;
 }
