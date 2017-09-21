@@ -43,7 +43,11 @@
 
 
   try{
+<<<<<<< HEAD
     $stmt = $db->prepare("SELECT * FROM Images WHERE login =:login ");
+=======
+    $stmt = $db->prepare("SELECT * FROM Images WHERE login =:login");
+>>>>>>> 70fe96da1fb3867371367e7ec0f410364ce567e0
     $stmt->bindParam("login", $login,PDO::PARAM_STR) ;
     $stmt->execute();
     ?>
@@ -59,6 +63,7 @@
       $creation = $data['creation_date'];
     ?>
 
+<<<<<<< HEAD
     <link rel="stylesheet" media= "all" href ="style/view_picture.css"/>
     <div class="each">
       <div class="likes"><?php echo $likes;?><img width="10%" src = "images/icon_star.png"/></div>
@@ -97,6 +102,19 @@
         <a title="Delete Picture" href="../admin/database/delete.php?id=<?php echo $id;?>"><img id="delete" src="images/delete.ico" alt="Delete" onclick="return confirm('Are you sure you want to delete this picture?')"></a>
         </form>
      </div>
+=======
+    <link rel="stylesheet" media= "all" href ="style/diplay.css"/>
+    <div class="each">
+      <!-- <div class = "title"> <?php echo $title;?> </div> -->
+      <div class="likes"><?php echo $likes;?><img width="10%" src = "images/icon_star.png"/></div>
+        <div align="center"><img class= "image1" src = "save/user_images/<?php echo $img;?>"/></div>
+        <div class="comments"> <?php get_comment($id, $login); ?></div>
+        <form action="view.php?id=<?php echo $id;?>&login=<?php echo $login;?>" method="post">
+          <input type="comment" id = "new_comment" name="comment" placeholder="Add a comment... ">
+        <input type="submit" id = "post" name="post" size="8" value="Post">
+        </form>
+    </div>
+>>>>>>> 70fe96da1fb3867371367e7ec0f410364ce567e0
 
 <?php } }
     catch(PDOException $e) {

@@ -19,7 +19,11 @@
       <input type="text" placeholder="Enter Last Name" name="last" value= "" required />
 
       <label><b>Phone number</b></label>
+<<<<<<< HEAD
       <input type="text" placeholder="Enter a Valid Phone: XXX-XXX-XXXX" name="phone" value="" required />
+=======
+      <input type="text" placeholder="Enter Phone (XXX) XXX-XXXX" name="phone" value="" required />
+>>>>>>> 70fe96da1fb3867371367e7ec0f410364ce567e0
 
       <label><b>Email</b></label>
       <input type="text" placeholder="Enter Email" name="email" value= "" required />
@@ -28,7 +32,11 @@
       <input type="text" placeholder="Enter Login" name="login" value= "" required />
 
       <label><b>Password</b></label>
+<<<<<<< HEAD
       <input type="password" placeholder="Enter Password     Note: your password must include at least 3 digits and 3 letters, 1 special character" name="passwd" value="" required/>
+=======
+      <input type="password" placeholder="Enter Password     Note: your password must include at least 3 digits and 3 letters" name="passwd" value="" required/>
+>>>>>>> 70fe96da1fb3867371367e7ec0f410364ce567e0
 
       <label><b>Repeat Password</b></label>
       <input type="password" placeholder="Repeat Password" name="repeat" value="" required/>

@@ -33,7 +33,11 @@
 }
 
 #image1{
+<<<<<<< HEAD
   width:90%;
+=======
+  width:60%;
+>>>>>>> 70fe96da1fb3867371367e7ec0f410364ce567e0
   height:auto;
 }
 
@@ -139,13 +143,26 @@
 
 
 .right{
+<<<<<<< HEAD
   float:right;
+=======
+>>>>>>> 70fe96da1fb3867371367e7ec0f410364ce567e0
   flex-direction:column;
   justify-content: space-between;
   align-items: flex-end;
   margin-left: auto;
+<<<<<<< HEAD
   margin-right:0;
   flex: 0 0 8%;
+=======
+  flex: 0 0 9%;
+
+}
+
+#right-items{
+  margin-top:70px;
+  max-width:150px;
+>>>>>>> 70fe96da1fb3867371367e7ec0f410364ce567e0
 }
 
 .inputfile {
@@ -188,7 +205,11 @@
 }
 
 .inputfile + label{
+<<<<<<< HEAD
   width:19%;
+=======
+  width:19%
+>>>>>>> 70fe96da1fb3867371367e7ec0f410364ce567e0
 }
 
 .inputfile:focus + label, .inputfile + label:hover, input[name="submit"]:hover {

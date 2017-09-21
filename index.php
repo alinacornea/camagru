@@ -49,10 +49,22 @@
 
   }
   try{
+<<<<<<< HEAD
     $stmt = $db->prepare("SELECT * FROM `Images` WHERE `login` != '$user'");
     $stmt->execute();
 
 ?>
+=======
+    $stmt = $db->prepare("SELECT * FROM Images");
+    $stmt->execute();
+
+?>
+<script>
+
+// display full
+</script>
+
+>>>>>>> 70fe96da1fb3867371367e7ec0f410364ce567e0
 
 <link rel="stylesheet" href="front/style/index.css">
 
@@ -110,10 +122,18 @@
       </div>
 
     </div>
+<<<<<<< HEAD
     <div class="right">
       <div> <a href= "front/save/upload_picture.php"> <img src="front/images/upload.ico" width="100%" height="100%" style="margin-top:30px;"></a></div>
       <div><a href= "front/save/take_picture.php"> <img src="front/images/edit2.jpg" width="100%" height="100%" style="margin-top:30px;"></a> </div>
       <div><a href= "front/save/edit_picture.php"><img src="front/images/globe2.jpg" width="100%" height="100%" style="margin-top:30px;"> </a></div>
+=======
+    <div class="right"> right side
+      <div id="right-items"> <a href= "front/save/upload_picture.php"> <img src="front/images/upload.ico" width="90%">  </a></div>
+      <div id="right-items"><a href= "front/save/take_picture.php"> <img src="front/images/edit2.jpg" width="90%"></a> </div>
+      <div id="right-items"><a href= "front/save/edit_picture.php?login=<?php echo $_GET['login'];?>"><img src="front/images/globe2.jpg" width="90%"> </a></div>
+
+>>>>>>> 70fe96da1fb3867371367e7ec0f410364ce567e0
     </div>
   </section>
 
