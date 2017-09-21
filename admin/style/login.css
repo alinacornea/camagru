@@ -1,0 +1,189 @@
+
+
+body {
+  display: center;
+}
+
+.content{
+  float:right;
+  margin-top:20px;
+}
+
+input[type="login"]
+{
+  display: block;
+  width: 235px;
+  height: 25px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius:5px;
+  box-shadow: inset 0px 1px 0px #BD871A, 0px 5px 0px 0px #800000, 0px 10px 5px #999;
+
+}
+
+input[type="password"]
+{
+  display: block;
+  width: 235px;
+  height: 25px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius:5px;
+  box-shadow: inset 0px 1px 0px #BD871A, 0px 5px 0px 0px #800000, 0px 10px 5px #999;
+}
+
+
+input[name="submit"]{
+  width:240px;
+  height:35px;
+  display:block;
+  font-family: "Whitney SSm A", "Whitney SSm B", "Avenir", "Segoe UI", "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size:16px;
+  font-weight:bold;
+  color:#fff;
+  text-decoration:none;
+  text-transform:uppercase;
+  text-align:center;
+  text-shadow:1px 1px 0px #B22222;
+  padding-top:6px;
+  position:relative;
+  border: none;
+  cursor:pointer;
+  background: #BA8B02;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #181818, #BA8B02);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #181818, #BA8B02); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius:5px;
+  box-shadow: inset 0px 1px 0px #BD871A, 0px 5px 0px 0px #800000, 0px 10px 5px #999;
+}
+
+.content a{
+  color:#FFF0F5;
+}
+input[name="create"]{
+  margin-right:40px;
+  width:280px;
+  height:45px;
+  display:block;
+  font-family: "Whitney SSm A", "Whitney SSm B", "Avenir", "Segoe UI", "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size:16px;
+  font-weight:bold;
+  color:#fff;
+  text-decoration:none;
+  text-transform:uppercase;
+  cursor:pointer;
+  text-align:center;
+  text-shadow:1px 1px 0px #000000;
+  padding-top:3px;
+  position:relative;
+  border: none
+  ;
+  background: #EB5757;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #000000, #EB5757);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #000000, #EB5757); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  background-image: linear-gradient(top,#B22222,#3111);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius:5px;
+  box-shadow: inset 0px 1px 0px #BD871A, 0px 5px 0px 0px #800000, 0px 10px 5px #999;
+
+}
+
+input[name="create"]:hover{
+  color:#c2a661;
+  text-shadow:none;
+}
+
+input[name="reset"]:hover{
+  color:#c2a661;
+  text-shadow:none;
+}
+
+input[name="submit"]:hover{
+  color:#B22222;
+  text-shadow:none;
+}
+
+.content a:hover{
+  color:#B22222;
+  font-size:18px;
+}
+
+input[name="enter"] {
+  width:25%;
+  height:35px;
+  font-family: "Whitney SSm A", "Whitney SSm B", "Avenir", "Segoe UI", "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size:16px;
+  text-align:center;
+  text-shadow:1px 1px 0px #B22222;
+  padding-top:6px;
+  position:relative;
+  background-color: #FFEBCD;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius:5px;
+  margin-bottom:10px;
+}
+
+input[name="reset"]{
+  margin-right:40px;
+  height:45px;
+  display:block;
+  font-family: "Whitney SSm A", "Whitney SSm B", "Avenir", "Segoe UI", "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size:14px;
+  font-weight:bold;
+  color:#fff;
+  width:30%;
+  text-decoration:none;
+  cursor:pointer;
+  text-transform:uppercase;
+  text-align:center;
+  text-shadow:1px 1px 0px #000000;
+  padding-top:3px;
+  position:relative;
+  border: none;
+  /*background-color: #B22222;*/
+  background: #EB5757;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #000000, #EB5757);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #000000, #EB5757); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius:5px;
+  box-shadow: inset 0px 1px 0px #BD871A, 0px 5px 0px 0px #800000, 0px 10px 5px #999;
+}
+
+h4 {
+  color:white;
+  font-size:15px;
+  font-size: 1em;
+  line-height: 1.5em;
+  font-family: "Whitney SSm A", "Whitney SSm B", "Avenir", "Segoe UI", "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+input[name="new"], input[name="confirm"]
+{
+  width:20%;
+  height:35px;
+  font-family: "Whitney SSm A", "Whitney SSm B", "Avenir", "Segoe UI", "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size:16px;
+  text-align:center;
+  text-shadow:1px 1px 0px #B22222;
+  padding-top:6px;
+  position:relative;
+  background-color: #FFEBCD;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius:5px;
+  margin-bottom:15px;
+}

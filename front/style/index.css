@@ -1,0 +1,233 @@
+
+.main{
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+/*left side css style*/
+.left{
+  flex: 0 0 90%;
+  flex-direction: row;
+  height:auto;
+}
+
+.images{
+  	display: flex;
+  	flex-direction: row;
+  	flex-wrap: wrap;
+  	justify-content: flex-start;
+  	align-content: flex-start;
+}
+
+.each{
+  border-radius: 25px;
+  margin-top:15px;
+  margin-left:20px;
+  width:24%;
+  max-width:370px;;
+  padding:8px;
+  background: #060923;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #928DAB, #060923);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #928DAB, #060923); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+#image1{
+  width:90%;
+  height:auto;
+}
+
+#likes{
+  width:12%;
+  max-width:40px;
+  color:white;
+}
+
+#likes:hover{
+  background-color:#11183C;
+  border-radius: 5px;
+}
+
+
+
+#title{
+  font-family: monospace;
+  font-size:1.3vw;
+  font-size-adjust:auto;
+  z-index:1;
+  color:#c2a661;
+}
+
+@media (min-width: 700px) {
+  #title{
+    font-size: 14px
+  }
+}
+
+.comments{
+  font-family: monospace;
+  color:black;
+  border:0.7px solid #ccc;
+  overflow:auto;
+  height:80px;
+  margin-top:10px;
+  border-radius: 5px;
+  font-size:0.8vw;
+  font-size-adjust:auto;
+  z-index:1;
+}
+
+@media (min-width: 700px) {
+.comments{
+  font-size: 11px
+}
+}
+
+.comments:hover{
+  background-color:#928DAB;
+}
+
+.each:hover{
+  /*background-image:url("../images/oep.jpg");*/
+  background: #060923;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #928DAB, #060923);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #928DAB, #060923); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+#nb_likes{
+  background-color:#11183C;
+  border-radius: 5px;
+  color:#B22222;
+  float:right;
+}
+
+#new_comment{
+  float:left;
+  color:#c2a661;
+  background-color:black;
+  border-radius: 5px;
+  margin-top:10px;
+  height:30px;
+  font-style:italic;
+  font-family: monospace;
+  font-size:0.8vw;
+  font-size-adjust:auto;
+  width:60%;
+  margin-left:5px;
+  margin-bottom:7px;
+
+}
+
+@media (min-width: 700px) {
+  #new_comment{
+    font-size: 12px
+  }
+}
+
+#post{
+  color:#B22222;
+  float:left;
+  margin-left: 10px;
+  border-radius: 5px;
+  font-family: monospace;
+  background-color: black;
+}
+
+/*-----------------------------------------------------------------*/
+/*right side css style*/
+
+
+.right{
+  float:right;
+  flex-direction:column;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-left: auto;
+  margin-right:0;
+  flex: 0 0 8%;
+}
+
+.inputfile {
+	width: 0px;
+	height: 0px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inside{
+  margin-bottom:20px;
+}
+.inputfile + label, input[name="submit"]  {
+    width:20%;
+    height:auto;
+    display:block;
+    font-family: "Whitney SSm A", "Whitney SSm B", "Avenir", "Segoe UI", "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: calc(0.35em + 1vmin);
+    font-weight:bold;
+    color:#fff;
+    text-decoration:none;
+    text-align:center;
+    text-shadow:3px 2px 0px black;
+    position:relative;
+    padding:8px;
+    border: none;
+    cursor:pointer;
+
+    background: #EB5757;
+    background: -webkit-linear-gradient(to bottom, #000000, #EB5757);
+    background: linear-gradient(to bottom, #000000, #EB5757);
+
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius:5px;
+    box-shadow: inset 0px 1px 0px #BD871A, 0px 5px 0px 0px #800000, 0px 10px 5px #999;
+}
+
+.inputfile + label{
+  width:19%;
+}
+
+.inputfile:focus + label, .inputfile + label:hover, input[name="submit"]:hover {
+    background-color: #B22222;
+}
+
+
+.edit{
+  justify-content: center;
+  display:flex;
+}
+
+
+.edit a{
+  justify-content: center;
+  display:flex;
+}
+
+
+.image{
+  margin: auto;
+  margin-bottom:20px;
+  margin-top:80px;
+  width:23%;
+  height:30%;
+}
+
+.arrow-next{
+  margin: auto;
+  margin-bottom:20px;
+  margin-top:80px;
+  width:23%;
+  height:60%;
+}
+
+.arrow-back{
+  margin: auto;
+  margin-bottom:20px;
+  margin-top:80px;
+  width:23%;
+  height:60%;
+}
