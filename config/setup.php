@@ -29,6 +29,28 @@ try {
     active INT
   )");
 
+  $first = "Alina";
+  $last = "Cornea";
+  $phone = "978-406-5814";
+  $email = "alinacornea18@gmail.com";
+  $login = "alcornea";
+  $activation = "1";
+  $pass = "qe898xn4!";
+  $active = "1";
+
+  $stmt = $conn->prepare("INSERT INTO Users(first_name,last_name, phone,email,login,activation,hash, active) VALUES (:first,:last,:phone,:email,:login,:activation,:hash, :active)");
+  $stmt->bindParam("first", $first,PDO::PARAM_STR) ;
+  $stmt->bindParam("last", $last,PDO::PARAM_STR) ;
+  $stmt->bindParam("phone", $phone,PDO::PARAM_INT) ;
+  $stmt->bindParam("email", $email,PDO::PARAM_STR) ;
+  $stmt->bindParam("login", $login,PDO::PARAM_STR) ;
+  $hash= hash('whirlpool', $pass); //Password encryption
+  $stmt->bindParam("activation", $activation,PDO::PARAM_STR) ;
+  $stmt->bindParam("hash", $hash,PDO::PARAM_STR) ;
+  $stmt->bindParam("active", $active,PDO::PARAM_INT) ;
+  $stmt->execute();
+
+
   $conn->exec("CREATE TABLE IF NOT EXISTS Images (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
     title VARCHAR(50) NOT NULL,

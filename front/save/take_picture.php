@@ -34,6 +34,7 @@
 </div>
 
 <script src = "picture.js"></script>
+
 <?php
     include('../../shared/footer.php');
 ?>

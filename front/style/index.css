@@ -152,6 +152,7 @@
 #right-items{
   margin-top:70px;
   max-width:150px;
+}
 
 .inputfile {
 	width: 0px;
@@ -165,6 +166,7 @@
 .inside{
   margin-bottom:20px;
 }
+
 .inputfile + label, input[name="submit"]  {
     width:20%;
     height:auto;
