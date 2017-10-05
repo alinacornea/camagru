@@ -22,9 +22,6 @@
       name: "Contrast",
       filter: "contrast(200%)"
     },{
-      name: "Shadow",
-      filter: "drop-shadow(16px 16px 20px blue)"
-    },{
       name: "Saturate",
       filter: "saturate(150%)"
     },{
@@ -39,6 +36,8 @@
     var video = document.getElementById('video');
     var canvas = document.getElementById('canvas');
     var canvasContext = canvas.getContext('2d');
+    var canvas_video = document.getElementById('canvas_video');
+    var contexVideo = canvas_video.getContext('2d');
 
     navigator.mediaDevices.getUserMedia = (navigator.mediaDevices.getUserMedia ||  navigator.mediaDevices.webkitGetUserMedia ||  navigator.mediaDevices.mozGetUserMedia ||  navigator.mediaDevices.msGetUserMedia);
 
@@ -70,47 +69,15 @@
       function takePhoto() {
         canvasContext.filter = video.style.webkitFilter;
         canvasContext.drawImage(video, 0, 0, canvas.width, canvas.height);
+        canvasContext.drawImage(canvas_video, 0, 0, canvas.width, canvas.height);
         canvas.className = "photo";
         document.getElementById("hidden").value = canvas.toDataURL('image/png');
         canvas.addEventListener('dragstart', dragStart, false);
 
       }
 
-      // var draggedElement;
-      // var x, y, z = 0;
-      //
-      // function dragStart(e) {
-      //   draggedElement = e.target;
-      //   x = e.clientX - draggedElement.offsetLeft;
-      //   y = e.clientY - draggedElement.offsetTop;
-      //   e.dataTransfer.setDragImage(draggedElement, x-240, y);
-      // }
-
-      // function drop(e) {
-      //   z++;
-      //   draggedElement.style.left = (e.clientX - x - 30) + "px";
-      //   draggedElement.style.top = (e.clientY - y - 30) + "px";
-      //   draggedElement.style.zIndex = z;
-      //   if (e.stopPropagation) {
-      //     e.stopPropagation();
-      //   }
-      //   e.preventDefault();
-      //   return false;
-      // }
-      //
-      // function dragEnter(e) {e.preventDefault();
-      //   return true;
-      // }
-      //
-      // function dragOver(e) {  e.preventDefault(); }
-      //
       document.getElementById("start").addEventListener('click', start);
       document.getElementById("capture").addEventListener('click', takePhoto);
-      //
-      // var container = document.body;
-      // // container.addEventListener('drop', drop, false);
-      // container.addEventListener('dragenter', dragEnter, false);
-      // container.addEventListener('dragover', dragOver, false);
 
 
       function findFilterByName (filterArray, name) {
@@ -122,6 +89,7 @@
         // Not found
         return null;
       };
+
 
       thisBrowserSupportsCssFilters = function () {
         var prefixes = " -webkit- -moz- -o- -ms- ".split(" ");
@@ -162,133 +130,38 @@
 
       alert("Sorry, you can't capture video from your webcam in this web browser. Try the latest desktop version of Firefox, Chrome or Opera.");
     }
+
   })();
+
+  function allowDrop(e){
+      e.preventDefault();
+  }
+
+  function drag_st(e){
+      //store the position of the mouse relativly to the image position
+      e.dataTransfer.setData("mouse_position_x",(e.clientX || e.pageX) - e.target.offsetLeft );
+      e.dataTransfer.setData("mouse_position_y",(e.clientY || e.pageY) - e.target.offsetTop  );
+      e.dataTransfer.setData("image_id",e.target.id);
+      // start();
+  }
+
+  function drop_st(e){
+      e.preventDefault();
+      var image = document.getElementById(e.dataTransfer.getData("image_id"));
+      var mouse_position_x = e.dataTransfer.getData("mouse_position_x");
+      var mouse_position_y  = e.dataTransfer.getData("mouse_position_y");
+
+      var canvas = document.getElementById('canvas_video');
+      ctx = canvas.getContext('2d');
+
+      ctx.drawImage(image , e.clientX - canvas.offsetLeft - mouse_position_x, e.clientY - canvas.offsetTop - mouse_position_y, 85, 85);
+      // need to work an redrag when is on canvas!!!!!
+
+      document.getElementById("hidden").value = canvas.toDataURL('image/png');
+  }
 
   // save picture sending to php
   document.getElementById('save').addEventListener('click' ,function(){
     document.forms["form1"].submit();
+
   });
-
-
-
-  function redrag(){
-
-  (function()  {
-         var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
-                                     window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-         window.requestAnimationFrame = requestAnimationFrame;
-       })();
-
-       var imagesOnCanvas = [];
-
-   function renderScene() {
-       requestAnimationFrame(renderScene);
-
-       var canvas = document.getElementById('canvas');
-       var ctx = canvas.getContext('2d');
-       ctx.clearRect(0,0,
-           canvas.width,
-           canvas.height
-       );
-
-       for(var x = 0,len = imagesOnCanvas.length; x < len; x++) {
-           var obj = imagesOnCanvas[x];
-           obj.context.drawImage(obj.image,obj.x,obj.y, 80,80);
-
-       }
-   }
-
-       requestAnimationFrame(renderScene);
-
-       window.addEventListener("load",function(){
-           var canvas = document.getElementById('canvas');
-   canvas.onmousedown = function(e) {
-       var downX = e.offsetX,downY = e.offsetY;
-
-       // scan images on canvas to determin if event hit an object
-       for(var x = 0,len = imagesOnCanvas.length; x < len; x++) {
-           var obj = imagesOnCanvas[x];
-           if(!isPointInRange(downX,downY,obj)) {
-               continue;
-           }
-
-           startMove(obj,downX,downY);
-           break;
-       }
-
-   }
-       },false);
-
-       function startMove(obj,downX,downY) {
-           var canvas = document.getElementById('canvas');
-
-           var origX = obj.x, origY = obj.y;
-           canvas.onmousemove = function(e) {
-               var moveX = e.offsetX, moveY = e.offsetY;
-               var diffX = moveX-downX, diffY = moveY-downY;
-
-
-               obj.x = origX+diffX;
-               obj.y = origY+diffY;
-           }
-
-           canvas.onmouseup = function() {
-               // stop moving
-               canvas.onmousemove = function(){};
-           }
-       }
-
-       function isPointInRange(x,y,obj) {
-           return !(x < obj.x ||
-               x > obj.x + obj.width ||
-               y < obj.y ||
-               y > obj.y + obj.height);
-       }
-     }
-
-
-
-  // drag and drop sticker on a image functions
-  function allowDrop(e){
-      e.preventDefault();}
-
-  function drag_st(e)
-  {
-      //store the position of the mouse relativly to the image position
-      // e.dataTransfer.setData("mouse_position_x",(e.clientX || e.pageX) - e.target.offsetLeft );
-      // e.dataTransfer.setData("mouse_position_y",(e.clientY || e.pageY) - e.target.offsetTop  );
-      var begin = e.dataTransfer.setData("image_id",e.target.id);
-  }
-
-  function drop_st(e)
-  {
-      e.preventDefault();
-      var canvas = document.getElementById('canvas');
-      var image = document.getElementById(e.dataTransfer.getData("image_id"));
-      ctx = canvas.getContext('2d');
-
-
-      var x = e.dataTransfer.getData("mouse_position_x");
-      var y = e.dataTransfer.getData("mouse_position_y");
-
-      // the image is drawn on the canvas at the position of the mouse when we lifted the mouse button
-      // alert(x + ',' + y + ',' + e.clientX + ',' + e.clientY);
-
-
-      //  imagesOnCanvas.push({
-      //    context: ctx,
-      //    image: image,
-      //    x:e.clientX - canvas.offsetLeft - mouse_position_x,
-      //    y:e.clientY - canvas.offsetTop - mouse_position_y,
-      //    width: image.offsetWidth,
-      //    height: image.offsetHeight
-      //  });
-
-
-      ctx.drawImage(image , e.clientX - canvas.offsetLeft - x, e.clientY - canvas.offsetTop - y, 85, 85);
-      // need to work an redrag when is on canvas!!!!!
-      image.addEventListener("click", redrag, false);
-
-
-      document.getElementById("hidden").value = canvas.toDataURL('image/png');
-  }
