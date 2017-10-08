@@ -80,18 +80,18 @@
     }
     imagedestroy($img);
   }
-  
+
 ?>
 
 
-<link rel="stylesheet" href="../style/index.css">
+<link rel="stylesheet" href="../style/index1.css">
     <div class= "edit">
       <a href="style_picture.php?id=<?php if($id>0&&$id<=4){echo($id-1);}else{echo "4";}?>&type=<?php echo $type;?>&file=<?php echo $file; ?>"> <img src="../images/arrow-back.png" class="arrow-back"> </a>
       <img src="<?php if($id==1){echo$imgname1;}else if($id == 2){echo$imgname2;} else if($id==3){echo$imgname3;} else if($id==4){echo$imgname4;}else{echo$img_name;}?>" class="image">
       <a href="style_picture.php?id=<?php if($id>=0&&$id<4){echo($id+1);}else{echo "0";}?>&type=<?php echo $type;?>&file=<?php echo $file; ?>"><img src="../images/arrow-next.png"class="arrow-next"> </a>
     </div>
     <div align="center" class="inside">
-      <form action="save_picture.php?id=<?php echo$id;?>&image=<?php echo$file;?>" method="post" enctype="multipart/form-data" >
+      <form action="save_pic.php?id=<?php echo$id;?>&image=<?php echo$file;?>" method="post" enctype="multipart/form-data" >
           <input type="submit" value="Save Image" name="submit">
       </form>
     </div>

@@ -1,0 +1,107 @@
+#filterButtons {
+  width: 300px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 3px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  color: white;
+  background: #23074d;
+  cursor:pointer;
+  background: -webkit-linear-gradient(to right, #cc5333, #23074d);
+  background: linear-gradient(to right, #cc5333, #23074d);
+  border-radius: 2px;
+  border:none;
+  box-shadow: 1px 2px #3B13B0;
+}
+
+.photo {
+  /*width:35%;
+  height:40%;*/
+  float:right;
+  /*border:2px solid grey;*/
+  box-shadow: 3px 3px 3px #888888;
+  top: 0;
+  left: 0;
+  /*padding: 10px;*/
+  background-color: white;
+  cursor: move;
+  transition:all 0.5s;
+}
+
+.0000photo:hover {
+  position: absolute;
+  -webkit-transform: translateY(-1px) translateX(-1px) rotate(0deg) scale(1.5);
+  z-index: 999;
+  box-shadow: 15px 15px 30px #666;
+}
+
+#video{
+  width:38%;
+  height:35%;
+  top:0;
+}
+
+#canvas{
+  width:38%;
+  height:35%;
+}
+
+#canvas_video{
+  width:38%;
+  height:35%;
+  position: absolute;
+  left: 0;
+  top:0;
+  /*z-index: 10;*/
+  background:transparent;
+}
+
+.booth{
+  margin-top:5px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.booth-capture{
+  /*margin-top:40px;*/
+  width:14%;
+  text-decoration:none;
+  max-width:200px;
+  margin-left:10px;
+  text-shadow:1px 1px 0px #000000;
+  height:15%;
+  font-family: monospace;
+  color:#fff;
+  font-size:1.2vw;
+  font-size-adjust:auto;
+  cursor:pointer;
+  background: #EB5757;
+  background: -webkit-linear-gradient(to bottom, #000000, #EB5757);
+  background: linear-gradient(to bottom, #000000, #EB5757);
+  margin-top:10px;
+  border:none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius:5px;
+  box-shadow: inset 0px 1px 0px #BD871A, 0px 5px 0px 0px #800000, 0px 10px 5px #999;
+}
+@media (min-width: 600px) {
+  .booth-capture{
+    font-size: 15px
+  }
+}
+
+.stick{
+  background: #EB5757;
+  background: -webkit-linear-gradient(to bottom, #000000, #EB5757);
+  background: linear-gradient(to bottom, #000000, #EB5757);
+  margin-top:20px;
+  cursor:move;
+  width: 40%;
+  height:40%;
+}

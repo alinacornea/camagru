@@ -39,7 +39,7 @@
           echo '</div>';
           ?>
           <div class="inside" align="center">
-            <form action="save_picture.php?login=<?php echo $_GET['login'];?>" method="post" enctype="multipart/form-data" >
+            <form action="save_pic.php?login=<?php echo $_GET['login'];?>" method="post" enctype="multipart/form-data" >
               <input type="submit" value="Save Image" name="submit">
             </form>
           </div>
@@ -54,7 +54,7 @@
 ?>
 
 
-<link rel="stylesheet" href="../style/index.css">
+<link rel="stylesheet" href="../style/index1.css">
   <div align="center">
       <form action="upload_picture.php?id=0&file=<?php echo $file?>" method="post" enctype="multipart/form-data">
           <input type="file"name="file" id="file" class="inputfile">

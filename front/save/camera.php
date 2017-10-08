@@ -15,16 +15,14 @@
     if ($_POST['submit'] === "Save pic")
     {
       $likes = 0;
-      $comments_nb = 0;
 
       try{
         $db = getDB();
-        $stmt = $db->prepare("INSERT INTO Images(title,img_path,login,likes,comments_nb,creation_date) VALUES (:name,:name,:login,:likes,:comments_nb,:creation)");
+        $stmt = $db->prepare("INSERT INTO Images(title,img_path,login,likes,creation_date) VALUES (:name,:name,:login,:likes,:creation)");
         $stmt->bindParam("name", $name,PDO::PARAM_STR) ;
         $stmt->bindParam("name", $name,PDO::PARAM_STR) ;
         $stmt->bindParam("login", $login,PDO::PARAM_STR) ;
         $stmt->bindParam("likes", $likes,PDO::PARAM_INT) ;
-        $stmt->bindParam("comments_nb", $comments_nb,PDO::PARAM_INT);
         $creation = date('Y-m-d H:i:s');
         $stmt->bindParam("creation", $creation,PDO::PARAM_STR) ;
         $stmt->execute();

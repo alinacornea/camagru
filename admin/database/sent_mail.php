@@ -14,7 +14,7 @@
 
         $To = $email;
         $Subject = "New comment on your picture!";
-        $Message = "Hi ".$login. ","."<br/>" ."You have a new_comment, check your Camagru account" ."<br/>";
+        $Message = "Hi ".$login. ","."<br/>" ."You have a new_comment, check your Camagru account!!" ."<br/>";
         $Headers = "From: camagru@gmail.com \r\n" .
         "Reply-To: camagru@gmail.com \r\n" .
         "Content-type: text/html; charset=UTF-8 \r\n";
